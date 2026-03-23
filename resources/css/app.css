@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap');
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -10,6 +11,45 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 *{
-    font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    transition: 0.2s ease-in-out;
 }
+
+    :root {
+        --primary-blue: #1E3A8A;
+        --primary-dark: #0F2B5E;
+        --accent-gold: #F59E0B;
+        --accent-teal: #0D9488;
+        --gray-bg: #F9FAFB;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: var(--accent-gold);
+        background: rgba(0,0,0,0.3);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: all 0.3s;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+        background: var(--accent-gold);
+        color: white;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: var(--accent-gold);
+    }
+
+    .hero-slide {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .theme-gradient {
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-teal) 100%);
+    }
