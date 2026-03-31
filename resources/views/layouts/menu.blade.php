@@ -5,7 +5,7 @@
             </div>
             <div class="links space-x-6 text-gray-700 font-medium">
                 <a href="#" class="hover:text-[#F59E0B] transition-colors">Home</a>
-                <a href="#" class="hover:text-[#F59E0B] transition-colors">About Us</a>
+                <a href="{{ route('about') }}" class="hover:text-[#F59E0B] transition-colors">About Us</a>
                 <a href="#" class="hover:text-[#F59E0B] transition-colors">Our Services</a>
                 <a href="#" class="hover:text-[#F59E0B] transition-colors">Blog</a>
             </div>

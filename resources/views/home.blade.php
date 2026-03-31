@@ -236,5 +236,54 @@
 
     </div>
 </section>
+<section class="relative py-16 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+    
+    <!-- Vision Block -->
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#1E3A8A] to-[#0D9488] px-8 py-16 md:px-14 md:py-20 shadow-2xl">
+        
+        <!-- Decorative glow -->
+        <div class="absolute -top-16 -right-16 w-64 h-64 bg-[#F59E0B]/20 blur-3xl rounded-full"></div>
+        <div class="absolute -bottom-20 -left-10 w-72 h-72 bg-cyan-400/10 blur-3xl rounded-full"></div>
+
+        <div class="relative z-10 max-w-4xl">
+            <span class="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-[#F59E0B] mb-4">
+                Regional Expansion
+            </span>
+
+            <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
+                Vision for West Africa
+            </h1>
+
+            <p class="text-lg md:text-2xl text-white/85 leading-relaxed max-w-3xl">
+                We are building a regional gas corridor that connects supply to demand, powering industrial growth from Nigeria to the wider ECOWAS region through smarter infrastructure, logistics, and energy access systems.
+            </p>
+        </div>
+    </div>
+
+    <!-- CTA Block -->
+    <div class="cta mt-12 rounded-3xl bg-[#F9FAFB] border border-gray-200 py-16 md:py-20 px-6 md:px-10 text-center shadow-sm">
+        <div class="max-w-4xl mx-auto">
+            <span class="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-[#F59E0B] mb-4">
+                Let’s Build the Future
+            </span>
+
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 leading-tight max-w-3xl mx-auto mb-6">
+                Ready to be part of Nigeria’s energy transition?
+            </h2>
+
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
+                Partner with GASCORP to expand clean energy access, strengthen gas infrastructure, and power long-term growth across Nigeria and West Africa.
+            </p>
+
+            <a href="#contact" class="inline-flex items-center gap-3 bg-[#F59E0B] hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                Partner with GASCORP Today
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+</section>
     </main>
 @endsection

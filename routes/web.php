@@ -8,7 +8,7 @@ Route::get('/', function () {
 });
 
 Route ::get('/', [PagesController::class, 'showHome']);
-Route ::get('about', [PagesController::class, 'showAbout']);
+Route ::get('about', [PagesController::class, 'showAbout'])->name('about');
 Route ::get('services', [PagesController::class, 'showServices']);
 Route ::get('our-assets', [PagesController::class, 'showAssets']);
 Route ::get('team', [PagesController::class, 'showteam']);
