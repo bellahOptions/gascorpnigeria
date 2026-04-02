@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactSubmissionConfirmation;
 use App\Mail\ContactSubmissionNotification;
-use App\Models\ContactMessages;
+use App\Models\ContactMessage;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\RateLimiter;
@@ -54,7 +54,7 @@ class ContactController extends Controller
         // ── Persist ───────────────────────────────────────────────────
         $validated = $request->validated();
 
-        $contactMessage = ContactMessages::create([
+        $contactMessage = ContactMessage::create([
             'name'       => $validated['name'],
             'email'      => $validated['email'],
             'phone'      => $validated['phone'],
