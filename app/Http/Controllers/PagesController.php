@@ -12,4 +12,10 @@ class PagesController extends Controller
     public function showAbout(){
         return view("about");
     }
+    public function showServices(){
+        return view("services");
+    }
+    public function showContact(){
+        return view("contact");
+    }
 }

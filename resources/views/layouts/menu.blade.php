@@ -6,11 +6,11 @@
             <div class="links space-x-6 text-gray-700 font-medium">
                 <a href="#" class="hover:text-[#F59E0B] transition-colors">Home</a>
                 <a href="{{ route('about') }}" class="hover:text-[#F59E0B] transition-colors">About Us</a>
-                <a href="#" class="hover:text-[#F59E0B] transition-colors">Our Services</a>
+                <a href="{{ route('services') }}" class="hover:text-[#F59E0B] transition-colors">Our Services</a>
                 <a href="#" class="hover:text-[#F59E0B] transition-colors">Blog</a>
             </div>
             <div class="buttons">
-                <a href="#"><button role="button" class="bg-[#1E3A8A] p-3 px-6 rounded-lg text-white font-semibold hover:bg-[#F59E0B] transition-all duration-300 shadow-md hover:shadow-lg">Contact Us</button></a>
+                <a href="{{ route('contact') }}"><button role="button" class="bg-[#1E3A8A] p-3 px-6 rounded-lg text-white font-semibold hover:bg-[#F59E0B] transition-all duration-300 shadow-md hover:shadow-lg">Contact Us</button></a>
             </div>        
         </nav>
         {{-- Mobile Menu Toggle --}}

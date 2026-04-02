@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+
+    'turnstile' => [
+        'secret_key' => env('turs_s_key'),
+        'site_key' => env('turns_site'),
+    ]
+
 ];
