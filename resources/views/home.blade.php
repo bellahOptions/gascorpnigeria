@@ -25,14 +25,14 @@
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 mt-8">
-                <a href="#" class="w-full sm:w-auto">
-                    <button role="button" class="w-full bg-[#1E3A8A] hover:bg-[#0F2B5E] text-white font-semibold px-6 py-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                <a href="{{ route('services') }}" class="w-full sm:w-auto">
+                    <button role="button" class="w-full bg-[#1E3A8A] hover:bg-[#0F2B5E] text-white font-semibold px-6 py-4 rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02]">
                         Explore Our Solutions
                     </button>
                 </a>
 
-                <a href="#" class="w-full sm:w-auto">
-                    <button role="button" class="w-full bg-[#F59E0B] hover:bg-amber-500 text-white font-semibold px-6 py-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                <a href="{{ route('contact') }}" class="w-full sm:w-auto">
+                    <button role="button" class="w-full bg-[#F59E0B] hover:bg-amber-500 text-white font-semibold px-6 py-4 rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02]">
                         Partner With Us
                     </button>
                 </a>
@@ -68,9 +68,9 @@
                 </p>
 
                 <!-- CTA -->
-                <a href="#" class="inline-block mt-8">
+                <a href="{{ route('about') }}" class="inline-block mt-8">
                     <button role="button"
-                        class="group flex items-center gap-3 bg-[#1E3A8A] hover:bg-[#0F2B5E] text-white font-semibold px-6 py-4 rounded-xl shadow-lg transition-all duration-300">
+                        class="group flex items-center gap-3 bg-[#1E3A8A] hover:bg-[#0F2B5E] text-white font-semibold px-6 py-4 rounded-lg shadow-lg transition-all duration-300">
                         
                         Learn More
 
@@ -87,10 +87,8 @@
 
             <!-- IMAGE -->
             <div class="relative">
-                <div class="absolute -top-6 -left-6 w-full h-full bg-[#F59E0B]/20 rounded-2xl blur-xl"></div>
-                
                 <img src="https://www.bakerhughes.com/sites/bakerhughes/files/styles/small_2_1_768x380_/public/2024-11/shutterstock_63056098.jpg?h=b80a9625&itok=_Nz8SHJG"
-                    class="relative w-full rounded-2xl shadow-2xl object-cover"
+                    class="relative w-full rounded-lg shadow-2xl object-cover"
                     alt="Gascorp Nigeria"/>
             </div>
 
@@ -167,7 +165,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         
         <!-- Card 1 -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+        <div class="group bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
             <div class="overflow-hidden">
                 <img src="https://pumaenergy.com/wp-content/uploads/2023/07/RS44410_10-2-scr.jpg.webp"
                      alt="Reliable LPG for clean cooking"
@@ -184,7 +182,7 @@
         </div>
 
         <!-- Card 2 -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+        <div class="group bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
             <div class="overflow-hidden">
                 <img src="https://images.hindustantimes.com/auto/img/2021/07/01/600x338/CNG_Boot_Space_1579603511215_1625111599636.jpg"
                      alt="Affordable CNG for transportation"
@@ -201,7 +199,7 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+        <div class="group bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
             <div class="overflow-hidden">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Methanier_aspher_LNGRIVERS.jpg"
                      alt="Scalable LNG solutions for industries"
@@ -218,7 +216,7 @@
         </div>
 
         <!-- Card 4 -->
-        <div class="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+        <div class="group bg-white rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
             <div class="overflow-hidden">
                 <img src="https://www.woodwayenergy.com/wp-content/uploads/2023/11/How-Is-Natural-Gas-Transported.jpg"
                      alt="End-to-end gas logistics and infrastructure"
@@ -239,12 +237,8 @@
 <section class="relative py-16 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
     
     <!-- Vision Block -->
-    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0F172A] via-[#1E3A8A] to-[#0D9488] px-8 py-16 md:px-14 md:py-20 shadow-2xl">
+    <div class="relative overflow-hidden rounded-lg bg-gradient-to-br from-[#0F172A] via-[#1E3A8A] to-[#0D9488] px-8 py-16 md:px-14 md:py-20 shadow-2xl">
         
-        <!-- Decorative glow -->
-        <div class="absolute -top-16 -right-16 w-64 h-64 bg-[#F59E0B]/20 blur-3xl rounded-full"></div>
-        <div class="absolute -bottom-20 -left-10 w-72 h-72 bg-cyan-400/10 blur-3xl rounded-full"></div>
-
         <div class="relative z-10 max-w-4xl">
             <span class="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-[#F59E0B] mb-4">
                 Regional Expansion
@@ -261,7 +255,7 @@
     </div>
 
     <!-- CTA Block -->
-    <div class="cta mt-12 rounded-3xl bg-[#F9FAFB] border border-gray-200 py-16 md:py-20 px-6 md:px-10 text-center shadow-sm">
+    <div class="cta mt-12 rounded-lg bg-[#F9FAFB] border border-gray-200 py-16 md:py-20 px-6 md:px-10 text-center shadow-sm">
         <div class="max-w-4xl mx-auto">
             <span class="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-[#F59E0B] mb-4">
                 Let’s Build the Future
@@ -275,7 +269,7 @@
                 Partner with GASCORP to expand clean energy access, strengthen gas infrastructure, and power long-term growth across Nigeria and West Africa.
             </p>
 
-            <a href="#contact" class="inline-flex items-center gap-3 bg-[#F59E0B] hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]">
+            <a href="{{ route('contact') }}" class="inline-flex items-center gap-3 bg-[#F59E0B] hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02]">
                 Partner with GASCORP Today
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>

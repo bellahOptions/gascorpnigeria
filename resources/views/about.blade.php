@@ -49,11 +49,10 @@
             </div>
 
             <div class="relative">
-                <div class="absolute -top-6 -left-6 w-full h-full bg-[#F59E0B]/15 rounded-3xl blur-xl"></div>
                 <img 
                     src="https://www.bakerhughes.com/sites/bakerhughes/files/styles/small_2_1_768x380_/public/2024-11/shutterstock_63056098.jpg?h=b80a9625&itok=_Nz8SHJG"
                     alt="GASCORP infrastructure"
-                    class="relative w-full rounded-3xl shadow-2xl object-cover"
+                    class="relative w-full rounded-lg shadow-2xl object-cover"
                 >
             </div>
         </div>
@@ -63,7 +62,7 @@
     <section class="pb-20 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            <div class="bg-white border border-gray-100 rounded-3xl shadow-lg p-8 md:p-10">
+            <div class="bg-white border border-gray-100 rounded-lg shadow-lg p-8 md:p-10">
                 <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">
                     Our Vision
                 </span>
@@ -75,7 +74,7 @@
                 </p>
             </div>
 
-            <div class="bg-gradient-to-br from-[#1E3A8A] to-[#0D9488] rounded-3xl shadow-lg p-8 md:p-10 text-white">
+            <div class="bg-gradient-to-br from-[#1E3A8A] to-[#0D9488] rounded-lg shadow-lg p-8 md:p-10 text-white">
                 <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">
                     Our Mission
                 </span>
@@ -107,7 +106,7 @@
 
     <!-- 774 MANDATE -->
     <section class="pb-20 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-        <div class="rounded-3xl bg-[#0F172A] overflow-hidden shadow-2xl">
+        <div class="rounded-lg bg-[#0F172A] overflow-hidden shadow-2xl">
             <div class="grid grid-cols-1 lg:grid-cols-2">
                 
                 <div class="p-10 md:p-14">
@@ -131,16 +130,16 @@
                     </h4>
 
                     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div class="rounded-2xl bg-[#F9FAFB] p-5 border border-gray-100">
+                        <div class="rounded-lg bg-[#F9FAFB] p-5 border border-gray-100">
                             <p class="text-gray-900 font-semibold">Establishing local distribution hubs</p>
                         </div>
-                        <div class="rounded-2xl bg-[#F9FAFB] p-5 border border-gray-100">
+                        <div class="rounded-lg bg-[#F9FAFB] p-5 border border-gray-100">
                             <p class="text-gray-900 font-semibold">Partnering with regional stakeholders</p>
                         </div>
-                        <div class="rounded-2xl bg-[#F9FAFB] p-5 border border-gray-100">
+                        <div class="rounded-lg bg-[#F9FAFB] p-5 border border-gray-100">
                             <p class="text-gray-900 font-semibold">Deploying modular gas infrastructure</p>
                         </div>
-                        <div class="rounded-2xl bg-[#F9FAFB] p-5 border border-gray-100">
+                        <div class="rounded-lg bg-[#F9FAFB] p-5 border border-gray-100">
                             <p class="text-gray-900 font-semibold">Enabling last-mile delivery systems</p>
                         </div>
                     </div>
@@ -163,28 +162,28 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+            <div class="bg-white rounded-lg p-8 shadow-lg border border-gray-100">
                 <h4 class="text-2xl font-bold text-gray-900 tracking-tight">Integrated Approach</h4>
                 <p class="mt-4 text-gray-600 text-lg leading-relaxed">
                     We combine logistics, infrastructure, and technology into one ecosystem.
                 </p>
             </div>
 
-            <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+            <div class="bg-white rounded-lg p-8 shadow-lg border border-gray-100">
                 <h4 class="text-2xl font-bold text-gray-900 tracking-tight">Penetration-Focused Model</h4>
                 <p class="mt-4 text-gray-600 text-lg leading-relaxed">
                     We don’t just transport gas — we expand access and open new markets.
                 </p>
             </div>
 
-            <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+            <div class="bg-white rounded-lg p-8 shadow-lg border border-gray-100">
                 <h4 class="text-2xl font-bold text-gray-900 tracking-tight">Technology-Driven Operations</h4>
                 <p class="mt-4 text-gray-600 text-lg leading-relaxed">
                     Our tracking systems ensure transparency, efficiency, and accountability.
                 </p>
             </div>
 
-            <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+            <div class="bg-white rounded-lg p-8 shadow-lg border border-gray-100">
                 <h4 class="text-2xl font-bold text-gray-900 tracking-tight">Scalable Infrastructure</h4>
                 <p class="mt-4 text-gray-600 text-lg leading-relaxed">
                     From 100 to 300+ specialized gas trailers, our growth is designed for national impact.
@@ -195,7 +194,7 @@
 
     <!-- IMPACT -->
     <section class="pb-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-        <div class="rounded-3xl bg-gradient-to-br from-[#1E3A8A] via-[#0F2B5E] to-[#0D9488] p-10 md:p-14 shadow-2xl">
+        <div class="rounded-lg bg-gradient-to-br from-[#1E3A8A] via-[#0F2B5E] to-[#0D9488] p-10 md:p-14 shadow-2xl">
             <div class="max-w-3xl">
                 <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">
                     Our Impact
@@ -206,25 +205,25 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/10">
                     <p class="text-white text-lg font-semibold leading-relaxed">
                         Cleaner energy for households
                     </p>
                 </div>
 
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/10">
                     <p class="text-white text-lg font-semibold leading-relaxed">
                         Lower transportation costs through CNG
                     </p>
                 </div>
 
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/10">
                     <p class="text-white text-lg font-semibold leading-relaxed">
                         Reliable energy for industries
                     </p>
                 </div>
 
-                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                <div class="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/10">
                     <p class="text-white text-lg font-semibold leading-relaxed">
                         Job creation across the value chain
                     </p>

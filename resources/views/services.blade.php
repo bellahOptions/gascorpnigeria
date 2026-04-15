@@ -46,7 +46,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
             <!-- 1 -->
-            <div class="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100">
+            <div class="bg-white rounded-lg p-8 md:p-10 shadow-lg border border-gray-100">
                 <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">01</span>
                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mt-4 tracking-tight">
                     Gas Storage Solutions
@@ -75,7 +75,7 @@
             </div>
 
             <!-- 2 -->
-            <div class="bg-gradient-to-br from-[#1E3A8A] to-[#0D9488] rounded-3xl p-8 md:p-10 shadow-lg text-white">
+            <div class="bg-gradient-to-br from-[#1E3A8A] to-[#0D9488] rounded-lg p-8 md:p-10 shadow-lg text-white">
                 <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">02</span>
                 <h3 class="text-2xl md:text-3xl font-bold mt-4 tracking-tight">
                     Gas Logistics & Transportation
@@ -117,7 +117,7 @@
             </div>
 
             <!-- 3 -->
-            <div class="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100">
+            <div class="bg-white rounded-lg p-8 md:p-10 shadow-lg border border-gray-100">
                 <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">03</span>
                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mt-4 tracking-tight">
                     Gas Penetration Infrastructure
@@ -127,15 +127,15 @@
                 </p>
 
                 <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="rounded-2xl bg-[#F9FAFB] border border-gray-100 p-5 font-medium text-gray-900">LPG skid plants</div>
-                    <div class="rounded-2xl bg-[#F9FAFB] border border-gray-100 p-5 font-medium text-gray-900">LCNG stations</div>
-                    <div class="rounded-2xl bg-[#F9FAFB] border border-gray-100 p-5 font-medium text-gray-900">Mini distribution hubs</div>
-                    <div class="rounded-2xl bg-[#F9FAFB] border border-gray-100 p-5 font-medium text-gray-900">Modular dispensing systems</div>
+                    <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 font-medium text-gray-900">LPG skid plants</div>
+                    <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 font-medium text-gray-900">LCNG stations</div>
+                    <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 font-medium text-gray-900">Mini distribution hubs</div>
+                    <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 font-medium text-gray-900">Modular dispensing systems</div>
                 </div>
             </div>
 
             <!-- 4 -->
-            <div class="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100">
+            <div class="bg-white rounded-lg p-8 md:p-10 shadow-lg border border-gray-100">
                 <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">04</span>
                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mt-4 tracking-tight">
                     774 LGA Distribution Model
@@ -165,7 +165,7 @@
             </div>
 
             <!-- 5 -->
-            <div class="bg-gradient-to-br from-[#0F172A] to-[#1E3A8A] rounded-3xl p-8 md:p-10 shadow-lg text-white">
+            <div class="bg-gradient-to-br from-[#0F172A] to-[#1E3A8A] rounded-lg p-8 md:p-10 shadow-lg text-white">
                 <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">05</span>
                 <h3 class="text-2xl md:text-3xl font-bold mt-4 tracking-tight">
                     Fleet & Logistics Management
@@ -198,7 +198,7 @@
             </div>
 
             <!-- 6 -->
-            <div class="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100">
+            <div class="bg-white rounded-lg p-8 md:p-10 shadow-lg border border-gray-100">
                 <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">06</span>
                 <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mt-4 tracking-tight">
                     Infrastructure & Logistics Advisory
@@ -232,7 +232,7 @@
 
     <!-- INDUSTRIES -->
     <section class="pb-20 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-        <div class="rounded-3xl bg-white border border-gray-100 shadow-lg p-8 md:p-12">
+        <div class="rounded-lg bg-white border border-gray-100 shadow-lg p-8 md:p-12">
             <div class="max-w-3xl">
                 <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">
                     Industries We Serve
@@ -243,19 +243,19 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mt-10">
-                <div class="rounded-2xl bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
+                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
                     Energy companies
                 </div>
-                <div class="rounded-2xl bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
+                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
                     Industrial manufacturers
                 </div>
-                <div class="rounded-2xl bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
+                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
                     Transport operators
                 </div>
-                <div class="rounded-2xl bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
+                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
                     Government projects
                 </div>
-                <div class="rounded-2xl bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
+                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
                     Commercial and residential markets
                 </div>
             </div>
@@ -264,7 +264,7 @@
 
     <!-- CTA -->
     <section class="pb-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-        <div class="rounded-3xl bg-gradient-to-br from-[#1E3A8A] via-[#0F2B5E] to-[#0D9488] p-10 md:p-14 shadow-2xl text-center">
+        <div class="rounded-lg bg-gradient-to-br from-[#1E3A8A] via-[#0F2B5E] to-[#0D9488] p-10 md:p-14 shadow-2xl text-center">
             <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">
                 Let’s Build Together
             </span>
@@ -277,7 +277,7 @@
                 Let’s build your energy solution together with infrastructure, logistics, and delivery systems designed for long-term impact.
             </p>
 
-            <a href="#contact" class="inline-flex items-center gap-3 mt-8 bg-[#F59E0B] hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]">
+            <a href="{{ route('contact') }}" class="inline-flex items-center gap-3 mt-8 bg-[#F59E0B] hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02]">
                 Let’s Build Your Energy Solution
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>

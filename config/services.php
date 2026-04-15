@@ -37,8 +37,8 @@ return [
 
 
     'turnstile' => [
-        'secret_key' => env('turs_s_key'),
-        'site_key' => env('turns_site'),
+        'secret_key' => env('TURNSTILE_SECRET_KEY', env('turs_s_key')),
+        'site_key' => env('TURNSTILE_SITE_KEY', env('turns_site')),
     ]
 
 ];

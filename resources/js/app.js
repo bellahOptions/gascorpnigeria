@@ -1,5 +1,6 @@
 import './bootstrap';
 
+if (document.querySelector('.hero-swiper') && window.Swiper) {
     const swiper = new Swiper(".hero-swiper", {
         loop: true,
         speed: 1000,
@@ -20,8 +21,19 @@ import './bootstrap';
             prevEl: ".swiper-button-prev"
         }
     });
-$(document).ready(function(){
-   $('.menu-toggle').click(function() {
-                $('.mobile').slideToggle();
-            });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('[data-mobile-menu-toggle]');
+    const menu = document.querySelector('[data-mobile-menu]');
+
+    if (!toggle || !menu) {
+        return;
+    }
+
+    toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+        menu.classList.toggle('hidden', isOpen);
+    });
 });
