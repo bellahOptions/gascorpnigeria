@@ -10,7 +10,7 @@
 <header class="sticky top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
     <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10 lg:px-16" aria-label="Primary navigation">
         <a href="{{ route('home') }}" class="flex items-center gap-3" aria-label="GASCORP Nigeria home">
-            <img src="{{ asset('1.svg') }}" class="h-10 w-auto" alt="GASCORP Nigeria">
+            <img src="{{ asset('1.png') }}" class="h-10 w-auto" alt="GASCORP Nigeria">
         </a>
 
         <div class="hidden items-center gap-8 md:flex">
