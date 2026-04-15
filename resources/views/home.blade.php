@@ -1,5 +1,29 @@
 @extends('layouts.theme')
-@section('title', 'Welcome')
+@section('title', 'Home')
+@section('meta_title', 'Gas Infrastructure and Logistics in Nigeria')
+@section('meta_description', 'GASCORP Nigeria builds integrated LPG, CNG, and LNG infrastructure with storage, logistics, and last-mile delivery systems across Nigeria and West Africa.')
+@section('meta_keywords', 'gas infrastructure Nigeria, LPG logistics, CNG distribution, LNG transport, GASCORP Nigeria')
+@section('canonical', route('home'))
+@section('og_image', asset('bg.jpg'))
+@section('theme_color', '#0E7A52')
+
+@push('structured_data')
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'WebPage',
+            'name' => 'GASCORP Nigeria - Home',
+            'description' => 'Integrated LPG, CNG, and LNG infrastructure and logistics for energy access across Nigeria and West Africa.',
+            'url' => route('home'),
+            'isPartOf' => [
+                '@type' => 'WebSite',
+                'name' => 'GASCORP Nigeria',
+                'url' => url('/'),
+            ],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+@endpush
+
 @section('content')
     <main role="main">
         {{-- Complete Hero Slideshow with your slide --}}

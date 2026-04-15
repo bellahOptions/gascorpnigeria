@@ -1,5 +1,29 @@
 @extends('layouts.theme')
 @section('title', 'Contact Us')
+@section('meta_title', 'Contact GASCORP Nigeria')
+@section('meta_description', 'Contact GASCORP Nigeria for LPG, CNG, and LNG infrastructure partnerships, logistics projects, and energy access initiatives.')
+@section('meta_keywords', 'contact gascorp, gas logistics contact, LPG CNG LNG partnership Nigeria')
+@section('canonical', route('contact'))
+@section('og_image', asset('bg.jpg'))
+@section('theme_color', '#111815')
+
+@push('structured_data')
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'ContactPage',
+            'name' => 'Contact GASCORP Nigeria',
+            'url' => route('contact'),
+            'description' => 'Get in touch with GASCORP Nigeria for gas infrastructure, logistics, and market penetration enquiries.',
+            'mainEntity' => [
+                '@type' => 'Organization',
+                'name' => 'Gas Corridor and Penetration Ltd',
+                'email' => 'info@gascorpnigeria.com',
+                'telephone' => '+2347038392520',
+            ],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+@endpush
 
 @php
     $turnstileEnabled = filled(config('services.turnstile.site_key')) && filled(config('services.turnstile.secret_key'));

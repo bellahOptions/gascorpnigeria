@@ -1,5 +1,29 @@
 @extends('layouts.theme')
 @section('title', 'Our Services')
+@section('meta_title', 'Gas Services: LPG, CNG, LNG Logistics')
+@section('meta_description', 'Explore GASCORP Nigeria services across gas storage, transportation, penetration infrastructure, and advisory for LPG, CNG, and LNG projects.')
+@section('meta_keywords', 'gas services Nigeria, LPG storage, CNG transportation, LNG logistics, gas advisory')
+@section('canonical', route('services'))
+@section('og_image', 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=80')
+@section('theme_color', '#12335F')
+
+@push('structured_data')
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'Service',
+            'name' => 'Integrated Gas Infrastructure and Logistics Services',
+            'provider' => [
+                '@type' => 'Organization',
+                'name' => 'Gas Corridor and Penetration Ltd',
+                'url' => url('/'),
+            ],
+            'areaServed' => 'Nigeria and West Africa',
+            'url' => route('services'),
+            'description' => 'Storage, transport, penetration infrastructure, and operational advisory for LPG, CNG, and LNG systems.',
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+@endpush
 
 @section('content')
 <main role="main" class="bg-[#F9FAFB] text-gray-900">

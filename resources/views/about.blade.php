@@ -1,5 +1,28 @@
 @extends('layouts.theme')
 @section('title', 'About Us')
+@section('meta_title', 'About GASCORP Nigeria')
+@section('meta_description', 'Learn how GASCORP Nigeria is expanding access to cleaner energy through scalable gas infrastructure, logistics systems, and regional distribution strategy.')
+@section('meta_keywords', 'about GASCORP, gas company Nigeria, clean energy access, LPG CNG LNG infrastructure')
+@section('canonical', route('about'))
+@section('og_image', 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=2000&q=80')
+@section('theme_color', '#0F2B5E')
+
+@push('structured_data')
+    <script type="application/ld+json">
+        {!! json_encode([
+            '@context' => 'https://schema.org',
+            '@type' => 'AboutPage',
+            'name' => 'About GASCORP Nigeria',
+            'description' => 'GASCORP Nigeria develops gas logistics and infrastructure systems that broaden cleaner energy access.',
+            'url' => route('about'),
+            'isPartOf' => [
+                '@type' => 'WebSite',
+                'name' => 'GASCORP Nigeria',
+                'url' => url('/'),
+            ],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+    </script>
+@endpush
 
 @section('content')
 <main role="main" class="bg-[#F9FAFB] text-gray-900">

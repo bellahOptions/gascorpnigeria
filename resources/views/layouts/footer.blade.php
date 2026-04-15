@@ -25,6 +25,7 @@
                 <a href="{{ route('services') }}" class="block hover:text-white">Services</a>
                 <a href="{{ route('contact') }}" class="block hover:text-white">Contact</a>
                 <a href="{{ route('home') }}" class="block hover:text-white">Home</a>
+                <a href="{{ route('app.landing') }}" class="block hover:text-white">GASCORP App</a>
             </div>
         </div>
 
