@@ -11,7 +11,7 @@
         $metaRobots = trim($__env->yieldContent('meta_robots', 'index,follow,max-image-preview:large'));
         $canonicalUrl = trim($__env->yieldContent('canonical', url()->current()));
         $ogType = trim($__env->yieldContent('og_type', 'website'));
-        $ogImage = trim($__env->yieldContent('og_image', asset('bg.jpg')));
+        $ogImage = trim($__env->yieldContent('og_image', 'https://i.postimg.cc/bJn1w7xB/gascorp.png'));
         $themeColor = trim($__env->yieldContent('theme_color', '#0D3D5D'));
     @endphp
     <title>{{ $metaTitle }}</title>
@@ -36,7 +36,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $metaTitle }}">
     <meta name="twitter:description" content="{{ $metaDescription }}">
-    <meta name="twitter:image" content="{{ $ogImage }}">
+    <meta name="twitter:image" content="https://i.postimg.cc/bJn1w7xB/gascorp.png">
     @vite(['resources/js/app.js','resources/css/app.css'])
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

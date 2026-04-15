@@ -18,15 +18,15 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GASCORP Nigeria">
   <meta property="og:title" content="GASCORP App | Pre-launch">
-  <meta property="og:description" content="Uber-like booking for gas logistics with live corridor intelligence, dispatch orchestration, and asset performance visibility.">
+  <meta property="og:description" content="gas logistics with live corridor intelligence, dispatch orchestration, and asset performance visibility.">
   <meta property="og:url" content="{{ route('app.landing') }}">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1621360841013-c7683c659ec6?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image" content="https://i.postimg.cc/bJn1w7xB/gascorp.png">
   <meta property="og:locale" content="en_NG">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="GASCORP App | Pre-launch">
   <meta name="twitter:description" content="Join the waitlist for the GASCORP App launch and get early access to digital gas logistics operations.">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1621360841013-c7683c659ec6?auto=format&fit=crop&w=1200&q=80">
+  <meta name="twitter:image" content="https://i.postimg.cc/bJn1w7xB/gascorp.png">
 
   <script type="application/ld+json">
     {!! json_encode([
