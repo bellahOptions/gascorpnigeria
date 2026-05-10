@@ -34,16 +34,13 @@
 
         <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 w-full">
             <div class="max-w-3xl">
-                <span class="inline-block px-4 py-2 rounded-full bg-[#F59E0B]/90 text-white text-sm font-semibold tracking-wide shadow-md mb-5">
-                    Our Services
-                </span>
 
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tighter">
                     Infrastructure, Logistics, and
                     <span class="block text-[#F59E0B]">Energy Access Solutions</span>
                 </h1>
 
-                <p class="mt-6 text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
+                <p class="mt-6 text-lg md:text-xl text-white/90 leading-tighter max-w-2xl">
                     GASCORP delivers integrated gas solutions that expand access, strengthen supply, and support cleaner energy adoption across Nigeria and West Africa.
                 </p>
             </div>
@@ -147,7 +144,7 @@
                     Gas Penetration Infrastructure
                 </h3>
                 <p class="mt-5 text-lg text-gray-600 leading-relaxed">
-                    We deploy infrastructure that enables real access to gas where it is needed — not just where pipelines exist.
+                    We deploy infrastructure that enables real access to gas where it is needed, not just where pipelines exist.
                 </p>
 
                 <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -267,20 +264,47 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mt-10">
-                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
-                    Energy companies
+                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900 flex flex-col items-center gap-3">
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A]" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8.5 1.5a.5.5 0 0 0-1 0v1.793l-.146-.147a.5.5 0 1 0-.708.708L8 5.207l1.354-1.353a.5.5 0 0 0-.708-.708l-.146.147V1.5z"/>
+                            <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h3A2.5 2.5 0 0 1 12 6.5v5A2.5 2.5 0 0 1 9.5 14h-3A2.5 2.5 0 0 1 4 11.5v-5zm2.5-1.5A1.5 1.5 0 0 0 5 6.5v5A1.5 1.5 0 0 0 6.5 13h3a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 9.5 5h-3z"/>
+                        </svg>
+                    </span>
+                    <span>Energy companies</span>
                 </div>
-                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
-                    Industrial manufacturers
+                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900 flex flex-col items-center gap-3">
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A]" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M1 14.5V3.75A.75.75 0 0 1 1.75 3h2.5a.75.75 0 0 1 .75.75V14.5H1zm5.5 0V1.75A.75.75 0 0 1 7.25 1h2.5a.75.75 0 0 1 .75.75V14.5H6.5zm5.5 0V6.75A.75.75 0 0 1 12.75 6h2.5a.75.75 0 0 1 .75.75V14.5H12z"/>
+                        </svg>
+                    </span>
+                    <span>Industrial manufacturers</span>
                 </div>
-                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
-                    Transport operators
+                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900 flex flex-col items-center gap-3">
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A]" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M0 11a1 1 0 0 0 1 1h1.5a1.5 1.5 0 1 0 3 0h5a1.5 1.5 0 1 0 3 0H15a1 1 0 0 0 1-1V8.5a1 1 0 0 0-.293-.707l-1.5-1.5A1 1 0 0 0 13.5 6H11V4a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v7zm1-7h9v6h-.05a1.5 1.5 0 0 0-2.9 0h-2.1a1.5 1.5 0 0 0-2.9 0H1V4zm10 3h2.5l1.5 1.5V10h-.55a1.5 1.5 0 0 0-2.9 0H11V7z"/>
+                        </svg>
+                    </span>
+                    <span>Transport operators</span>
                 </div>
-                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
-                    Government projects
+                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900 flex flex-col items-center gap-3">
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A]" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8 1a1 1 0 0 1 .894.553l.382.764 1.706.247a1 1 0 0 1 .554 1.706l-1.235 1.204.292 1.7a1 1 0 0 1-1.451 1.054L8 7.514l-1.528.804a1 1 0 0 1-1.451-1.054l.292-1.7-1.235-1.204a1 1 0 0 1 .554-1.706l1.706-.247.382-.764A1 1 0 0 1 8 1z"/>
+                            <path d="M2 9.5a.5.5 0 0 1 .5-.5H6v1H3v3h10v-3h-3v-1h3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-4z"/>
+                        </svg>
+                    </span>
+                    <span>Government projects</span>
                 </div>
-                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900">
-                    Commercial and residential markets
+                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900 flex flex-col items-center gap-3">
+                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A]" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 2 8h1v6a.5.5 0 0 0 .5.5H6v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4h2.5a.5.5 0 0 0 .5-.5V8h1a.5.5 0 0 0 .354-.854l-6-6z"/>
+                        </svg>
+                    </span>
+                    <span>Commercial and residential markets</span>
                 </div>
             </div>
         </div>

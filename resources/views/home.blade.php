@@ -26,44 +26,77 @@
 
 @section('content')
     <main role="main">
-        {{-- Complete Hero Slideshow with your slide --}}
-        <section class="hero relative min-h-screen bg-[url('https://content.gestra.com/-/media/gestra/global/industries/masthead_oil_and_gas_gettyimages-1039704136-min.ashx?rev=b232f5f541024574aa37f52d3bb42dad&extension=jpg%2Cgif')] bg-cover bg-center flex items-center overflow-hidden">
-    
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-gradient-to-r from-[#0F172A]/85 via-[#1E3A8A]/65 to-[#0D9488]/40"></div>
+        {{-- Hero Slideshow --}}
+        @php
+            $heroSlides = [
+                [
+                    'eyebrow' => 'Clean Energy Infrastructure',
+                    'title' => 'Powering Nigeria\'s Clean Energy Future',
+                    'accent' => 'One Corridor at a Time',
+                    'description' => 'GASCORP is building the infrastructure, logistics, and last-mile systems that deliver LPG, CNG, and LNG to every corner of Nigeria and beyond.',
+                    'image' => 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=2000&q=80',
+                ],
+                [
+                    'eyebrow' => 'Gas Storage and Terminals',
+                    'title' => 'Infrastructure That Stabilizes Supply',
+                    'accent' => 'Across Cities and Communities',
+                    'description' => 'From regional depots to local storage hubs, we strengthen supply reliability so homes, businesses, and industries have dependable gas access.',
+                    'image' => 'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=2000&q=80',
+                ],
+                [
+                    'eyebrow' => 'Advanced Logistics Network',
+                    'title' => 'Moving Energy Smarter and Faster',
+                    'accent' => 'With Virtual Pipeline Systems',
+                    'description' => 'Our intermodal logistics model combines road transport, dispatch planning, and distribution intelligence to deliver gas where pipelines do not reach.',
+                    'image' => 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=2000&q=80',
+                ],
+                [
+                    'eyebrow' => 'Industrial and Mobility Growth',
+                    'title' => 'Enabling CNG and LNG Adoption at Scale',
+                    'accent' => 'For Transport and Industry',
+                    'description' => 'We partner with public and private stakeholders to accelerate cleaner fuel transition through resilient infrastructure and dependable supply chains.',
+                    'image' => 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&w=2000&q=80',
+                ],
+            ];
+        @endphp
 
-    <!-- Content -->
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20">
-        <div class="w-full lg:w-[60%]">
-            <span class="inline-block bg-[#F59E0B]/70 text-white text-sm md:text-base font-semibold px-4 py-2 rounded-full shadow-md mb-5">
-                Clean Energy Infrastructure
-            </span>
+        <section class="hero-swiper swiper relative min-h-screen overflow-hidden" aria-label="GASCORP hero slideshow">
+            <div class="swiper-wrapper">
+                @foreach ($heroSlides as $slide)
+                    <div class="swiper-slide hero-slide relative min-h-screen flex items-center" style="background-image: url('{{ $slide['image'] }}');">
+                        <div class="absolute inset-0 bg-gradient-to-r from-[#0F172A]/85 via-[#1E3A8A]/65 to-[#0D9488]/40"></div>
 
-            <h1 class="tracking-tighter leading-tight text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                Powering Nigeria’s Clean Energy Future
-                <span class="block text-[#F59E0B]">One Corridor at a Time</span>
-            </h1>
+                        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20">
+                            <div class="w-full lg:w-[60%]">
 
-            <p class="text-white/90 text-lg md:text-xl lg:text-2xl leading-relaxed mt-5 max-w-3xl">
-                GASCORP is building the infrastructure, logistics, and last-mile systems that deliver LPG, CNG, and LNG to every corner of Nigeria and beyond.
-            </p>
+                                <h1 class="tracking-tighter text-4xl md:text-6xl font-bold text-white leading-tighter">
+                                    {{ $slide['title'] }}
+                                    <span class="block text-[#F59E0B] leading-tighter">{{ $slide['accent'] }}</span>
+                                </h1>
 
-            <div class="flex flex-col sm:flex-row gap-4 mt-8">
-                <a href="{{ route('services') }}" class="w-full sm:w-auto">
-                    <button role="button" class="w-full bg-[#1E3A8A] hover:bg-[#0F2B5E] text-white font-semibold px-6 py-4 rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                        Explore Our Solutions
-                    </button>
-                </a>
+                                <p class="text-white/90 text-lg md:text-xl lg:text-2xl leading-tighter mt-5 max-w-3xl">
+                                    {{ $slide['description'] }}
+                                </p>
 
-                <a href="{{ route('contact') }}" class="w-full sm:w-auto">
-                    <button role="button" class="w-full bg-[#F59E0B] hover:bg-amber-500 text-white font-semibold px-6 py-4 rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                        Partner With Us
-                    </button>
-                </a>
+                                <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                                    <a href="{{ route('services') }}" class="w-full sm:w-auto bg-[#1E3A8A] hover:bg-[#0F2B5E] text-white font-semibold px-6 py-4 rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] text-center">
+                                        Explore Our Solutions
+                                    </a>
+
+                                    <a href="{{ route('contact') }}" class="w-full sm:w-auto bg-[#F59E0B] hover:bg-amber-500 text-white font-semibold px-6 py-4 rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02] text-center">
+                                        Partner With Us
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-        </div>
-    </div>
-</section>
+
+            <div class="swiper-pagination !bottom-8"></div>
+            <div class="swiper-button-prev !left-4 md:!left-8"></div>
+            <div class="swiper-button-next !right-4 md:!right-8"></div>
+        </section>
 <section class="relative overflow-hidden bg-[#F9FAFB]">
     
     <!-- ABOUT SECTION -->
@@ -73,9 +106,6 @@
             
             <!-- TEXT -->
             <div class="who-we-are">
-                <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-widest">
-                    About GASCORP
-                </span>
 
                 <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mt-4 leading-tight">
                     Who We Are
@@ -87,7 +117,7 @@
                 </p>
 
                 <p class="mt-4 text-lg md:text-xl text-gray-600 leading-relaxed">
-                    We are not just moving gas — we are building the systems that make gas accessible, affordable, and
+                    We are not just moving gas, we are building the systems that make gas accessible, affordable, and
                     reliable for households, businesses, and industries.
                 </p>
 
@@ -95,9 +125,7 @@
                 <a href="{{ route('about') }}" class="inline-block mt-8">
                     <button role="button"
                         class="group flex items-center gap-3 bg-[#1E3A8A] hover:bg-[#0F2B5E] text-white font-semibold px-6 py-4 rounded-lg shadow-lg transition-all duration-300">
-                        
                         Learn More
-
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             fill="currentColor"
                             class="transition-transform duration-300 group-hover:translate-x-1"
