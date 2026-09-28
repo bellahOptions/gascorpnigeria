@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- Light-only brand: opt out of the browser's automatic dark rendering. --}}
+    <meta name="color-scheme" content="light">
     @php
         $defaultTitle = trim($__env->yieldContent('title'));
         $metaTitle = trim($__env->yieldContent('meta_title', $defaultTitle ? "{$defaultTitle} | GASCORP Nigeria" : 'GASCORP Nigeria'));

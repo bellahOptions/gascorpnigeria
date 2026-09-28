@@ -31,7 +31,6 @@ new class extends Component
                     ['label' => 'Infrastructure Advisory', 'route' => 'services', 'fragment' => 'advisory'],
                 ],
             ],
-            ['label' => 'GASCORP App', 'route' => 'app.landing', 'children' => []],
             ['label' => 'Contact', 'route' => 'contact', 'children' => []],
         ];
     }
@@ -112,9 +111,17 @@ new class extends Component
                 </ul>
 
                 <div class="flex items-center gap-3">
-                    <a href="{{ route('contact') }}" class="btn btn-primary btn-sm hidden md:inline-flex" wire:navigate>
-                        Request a Consultation
-                    </a>
+                    {{--
+                        The responsive display lives on this wrapper rather than on
+                        the .btn anchor: .btn sets `display: inline-flex` from an
+                        unlayered rule, so a `hidden` utility on the same element
+                        would lose the cascade and the CTA would leak onto mobile.
+                    --}}
+                    <div class="hidden md:block">
+                        <a href="{{ route('contact') }}" class="btn btn-primary btn-sm" wire:navigate>
+                            Request a Consultation
+                        </a>
+                    </div>
 
                     <button
                         type="button"
@@ -184,10 +191,6 @@ new class extends Component
                                 @endif
                             </div>
                         @endforeach
-
-                        <a href="{{ route('contact') }}" class="btn btn-gold btn-block mt-8" wire:navigate>
-                            Request a Consultation
-                        </a>
 
                         <div class="mt-8 space-y-2 border-t border-[#e6e9ee] pt-6 text-sm text-[#475069]">
                             <p class="font-bold text-[#0f172a]">Head Office</p>

@@ -50,7 +50,18 @@
     --ink-soft: #475069;
     --line: #e6e9ee;
     --header-offset: 0px;
+
+    /* GASCORP is a light-only brand. Declaring the scheme stops the browser
+       from applying OS-level dark styling to form fields, scrollbars and
+       native controls on a page that is intentionally white. */
+    color-scheme: light;
 }
+
+/* Dark mode is switched off site-wide: the `dark` variant now only responds to
+   a literal .dark ancestor, which this site never renders. This neutralises the
+   prefers-color-scheme rules that Tailwind would otherwise generate for any
+   dark: utilities found in scanned vendor views. */
+@custom-variant dark (&:where(.dark, .dark *));
 
 *,
 *::before,
@@ -63,11 +74,13 @@
 html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    color-scheme: light;
 }
 
 body {
     color: var(--ink);
     background: #ffffff;
+    color-scheme: light;
 }
 
 h1,
@@ -92,6 +105,18 @@ h6 {
     outline: 2px solid var(--accent-gold);
     outline-offset: 3px;
     border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Colour scheme — light only
+   The brand is light-only. `color-scheme: light` keeps OS dark mode away from
+   form fields, scrollbars and native controls, and the `dark` variant is bound
+   to a literal .dark ancestor (never rendered) so any dark: utility that reaches
+   the build from scanned vendor views cannot activate on prefers-color-scheme.
+   -------------------------------------------------------------------------- */
+
+:root {
+    color-scheme: light;
 }
 
 /* --------------------------------------------------------------------------
@@ -882,7 +907,8 @@ h6 {
 /* --------------------------------------------------------------------------
    Hero slideshow
    No gradient scrims: the photograph stays fully visible and copy legibility is
-   carried by solid panels, solid stacks and text shadows instead.
+   carried by one solid ink panel that every slide shares, so the headline never
+   has to sit bare on a busy image.
    -------------------------------------------------------------------------- */
 
 .hero-swiper { position: relative; }
@@ -905,22 +931,22 @@ h6 {
 
 .hero-swiper .swiper-slide > .shell { min-height: inherit; display: flex; align-items: center; }
 
-/* Type-safe on top of a photograph without any overlay. */
-.on-photo {
-    color: #fff;
-    text-shadow: 0 1px 2px rgba(15, 23, 42, 0.9), 0 1px 18px rgba(15, 23, 42, 0.7);
+/* Universal copy panel: solid ink, gold rule, never a gradient, and never
+   wider than the container so the photograph always frames it. */
+.hero-panel {
+    position: relative;
+    max-inline-size: 46rem;
+    background-color: rgba(15, 23, 42, 0.95);
+    border-inline-start: 3px solid var(--accent-gold);
+    padding: 2rem 1.5rem;
 }
 
-.on-photo-muted {
-    color: rgba(255, 255, 255, 0.92);
-    text-shadow: 0 1px 2px rgba(15, 23, 42, 0.88), 0 1px 14px rgba(15, 23, 42, 0.62);
+@media (min-width: 640px) {
+    .hero-panel { padding: 2.5rem 2.5rem; }
 }
 
-/* Compact glass/matte bar that lets the image read through it. */
-.panel-bar {
-    background-color: rgba(15, 23, 42, 0.86);
-    backdrop-filter: blur(10px);
-    border-left: 3px solid var(--accent-gold);
+@media (min-width: 1024px) {
+    .hero-panel { padding: 3rem 3rem; }
 }
 
 .swiper-button-next,
@@ -957,6 +983,25 @@ h6 {
     background: var(--accent-gold);
     width: 26px;
     border-radius: 999px;
+}
+
+/* Mobile gets no on-slide controls: the arrows crowd the copy panel and the
+   pagination would sit underneath it. Touch swipe still moves the slideshow. */
+@media (max-width: 767px) {
+    .hero-swiper .swiper-button-next,
+    .hero-swiper .swiper-button-prev,
+    .hero-swiper .swiper-pagination {
+        display: none !important;
+    }
+}
+
+/* Progressive pagination offset for wider viewports. */
+@media (min-width: 768px) {
+    .hero-swiper .swiper-pagination { bottom: 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+    .hero-swiper .swiper-pagination { bottom: 2rem; }
 }
 
 /* --------------------------------------------------------------------------
