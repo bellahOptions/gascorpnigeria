@@ -10,7 +10,10 @@ uses(RefreshDatabase::class);
 test('waitlist signup queues confirmation email', function () {
     Mail::fake();
 
+    $this->withSession(['_token' => 'test-token']);
+
     $response = $this->post(route('waitlist.store'), [
+        '_token' => 'test-token',
         'name' => 'Test User',
         'email' => 'test.user@gmail.com',
         'role' => 'customer',

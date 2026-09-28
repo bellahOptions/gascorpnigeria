@@ -1,336 +1,265 @@
 @extends('layouts.theme')
 @section('title', 'Our Services')
-@section('meta_title', 'Gas Services: LPG, CNG, LNG Logistics')
-@section('meta_description', 'Explore GASCORP Nigeria services across gas storage, transportation, penetration infrastructure, and advisory for LPG, CNG, and LNG projects.')
-@section('meta_keywords', 'gas services Nigeria, LPG storage, CNG transportation, LNG logistics, gas advisory')
+@section('meta_title', 'Gas Services | LPG, CNG and LNG Logistics in Nigeria')
+@section('meta_description', 'Explore GASCORP Nigeria services across gas storage, transportation, penetration infrastructure and advisory for LPG, CNG and LNG projects.')
+@section('meta_keywords', 'gas services Nigeria, LPG storage, CNG transportation, LNG logistics, gas advisory, virtual pipeline')
 @section('canonical', route('services'))
 @section('og_image', 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=80')
 @section('theme_color', '#12335F')
 
 @push('structured_data')
     <script type="application/ld+json">
-        {!! json_encode([
-            '@context' => 'https://schema.org',
-            '@type' => 'Service',
+                {{-- Schema.org keys are written without their "@" prefix and restored after
+             encoding: Blade would otherwise compile "@context" as a directive. --}}
+{!! strtr(json_encode([
+            'context' => 'https://schema.org',
+            'type' => 'Service',
             'name' => 'Integrated Gas Infrastructure and Logistics Services',
             'provider' => [
-                '@type' => 'Organization',
+                'type' => 'Organization',
                 'name' => 'Gas Corridor and Penetration Ltd',
                 'url' => url('/'),
             ],
             'areaServed' => 'Nigeria and West Africa',
             'url' => route('services'),
-            'description' => 'Storage, transport, penetration infrastructure, and operational advisory for LPG, CNG, and LNG systems.',
-        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+            'description' => 'Storage, transport, penetration infrastructure and operational advisory for LPG, CNG and LNG systems.',
+            'hasOfferCatalog' => [
+                'type' => 'OfferCatalog',
+                'name' => 'GASCORP service catalogue',
+                'itemListElement' => [
+                    ['type' => 'Offer', 'itemOffered' => ['type' => 'Service', 'name' => 'Gas Storage Solutions']],
+                    ['type' => 'Offer', 'itemOffered' => ['type' => 'Service', 'name' => 'Gas Logistics and Transportation']],
+                    ['type' => 'Offer', 'itemOffered' => ['type' => 'Service', 'name' => 'Gas Penetration Infrastructure']],
+                    ['type' => 'Offer', 'itemOffered' => ['type' => 'Service', 'name' => '774 LGA Distribution Model']],
+                    ['type' => 'Offer', 'itemOffered' => ['type' => 'Service', 'name' => 'Fleet and Logistics Management']],
+                    ['type' => 'Offer', 'itemOffered' => ['type' => 'Service', 'name' => 'Infrastructure and Logistics Advisory']],
+                ],
+            ],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), ['"context"' => '"'.chr(64).'context"', '"type"' => '"'.chr(64).'type"']) !!}
     </script>
 @endpush
 
 @section('content')
-<main role="main" class="bg-[#F9FAFB] text-gray-900">
+<main role="main">
 
-    <!-- PAGE HERO -->
-    <section class="relative overflow-hidden min-h-[55vh] flex items-center bg-[url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center">
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0F172A]/85 via-[#1E3A8A]/70 to-[#0D9488]/45"></div>
+    <livewire:site.page-hero
+        eyebrow="What we do"
+        title="Infrastructure, logistics and"
+        accent="energy access solutions."
+        description="GASCORP delivers integrated gas services that expand access, strengthen supply and support cleaner energy adoption across Nigeria and West Africa."
+        :image="'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=80'"
+        breadcrumb="Services"
+    />
 
-        <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-20 w-full">
-            <div class="max-w-3xl">
-
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tighter">
-                    Infrastructure, Logistics, and
-                    <span class="block text-[#F59E0B]">Energy Access Solutions</span>
-                </h1>
-
-                <p class="mt-6 text-lg md:text-xl text-white/90 leading-tighter max-w-2xl">
-                    GASCORP delivers integrated gas solutions that expand access, strengthen supply, and support cleaner energy adoption across Nigeria and West Africa.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTRO -->
-    <section class="py-20 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto">
-            <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">
-                What We Do
-            </span>
-            <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 mt-4">
-                End-to-End Gas Services Built for Scale
-            </h2>
-            <p class="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed">
-                From storage and transport to market penetration and advisory, our services are designed to make LPG, CNG, and LNG more accessible, reliable, and commercially viable.
-            </p>
-        </div>
-    </section>
-
-    <!-- SERVICES GRID -->
-    <section class="pb-20 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-            <!-- 1 -->
-            <div class="bg-white rounded-lg p-8 md:p-10 shadow-lg border border-gray-100">
-                <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">01</span>
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mt-4 tracking-tight">
-                    Gas Storage Solutions
-                </h3>
-                <p class="mt-5 text-lg text-gray-600 leading-relaxed">
-                    We develop and manage strategic storage facilities that ensure uninterrupted supply of LPG, CNG, and LNG across regions.
-                </p>
-
-                <div class="mt-8">
-                    <h4 class="text-lg font-semibold text-gray-900">Key Benefits</h4>
-                    <ul class="mt-4 space-y-3 text-gray-600">
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#F59E0B]">•</span>
-                            <span>Supply stability</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#F59E0B]">•</span>
-                            <span>Reduced volatility</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#F59E0B]">•</span>
-                            <span>Strategic reserves for demand peaks</span>
-                        </li>
-                    </ul>
+    {{-- ================================================================
+         Service directory (Livewire accordion)
+         ================================================================ --}}
+    <section class="section" aria-labelledby="services-directory">
+        <div class="shell">
+            <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
+                <div class="lg:col-span-7">
+                    <p class="eyebrow">Service directory</p>
+                    <h2 id="services-directory" class="display display-lg mt-6">
+                        End-to-end gas services built to scale.
+                    </h2>
+                </div>
+                <div class="lg:col-span-5">
+                    <p class="text-[1.0625rem] leading-8 text-[#475069]">
+                        From storage and transport to market penetration and advisory, each service is designed to
+                        make LPG, CNG and LNG more accessible, reliable and commercially viable.
+                    </p>
                 </div>
             </div>
 
-            <!-- 2 -->
-            <div class="bg-gradient-to-br from-[#1E3A8A] to-[#0D9488] rounded-lg p-8 md:p-10 shadow-lg text-white">
-                <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">02</span>
-                <h3 class="text-2xl md:text-3xl font-bold mt-4 tracking-tight">
-                    Gas Logistics & Transportation
-                </h3>
+            <div class="mt-14">
+                @php
+                    $services = [
+                        [
+                            'id' => 'storage',
+                            'title' => 'Gas Storage Solutions',
+                            'summary' => 'We develop and manage strategic storage capacity that keeps LPG, CNG and LNG flowing through demand peaks without interruption.',
+                            'points' => ['Regional depot development', 'Local storage hub operation', 'Inventory and reserve planning'],
+                            'outcomes' => ['Supply stability', 'Reduced price volatility', 'Strategic reserves for peak demand'],
+                        ],
+                        [
+                            'id' => 'logistics',
+                            'title' => 'Gas Logistics & Transportation',
+                            'summary' => 'We move gas using specialised high-pressure and cryogenic trailers along virtual pipeline routes, reaching markets that fixed pipelines never will.',
+                            'points' => ['Virtual pipeline systems', 'Intermodal road and maritime logistics', 'Cross-border distribution'],
+                            'outcomes' => ['Bulk LPG haulage', 'CNG distribution networks', 'LNG cryogenic transport'],
+                        ],
+                        [
+                            'id' => 'penetration',
+                            'title' => 'Gas Penetration Infrastructure',
+                            'summary' => 'We deploy the physical assets that create real access to gas where it is needed, not only where existing infrastructure happens to run.',
+                            'points' => ['LPG skid plants', 'LCNG refuelling stations', 'Mini distribution hubs', 'Modular dispensing systems'],
+                            'outcomes' => ['Gas access in new markets', 'Faster station rollout', 'Lower capital per location'],
+                        ],
+                        [
+                            'id' => 'lga',
+                            'title' => '774 LGA Distribution Model',
+                            'summary' => 'Our decentralised distribution architecture is engineered to carry cleaner energy into urban, rural and underserved communities across all 774 Local Government Areas.',
+                            'points' => ['Community-level distribution partners', 'Cylinder exchange networks', 'Off-grid LNG power solutions'],
+                            'outcomes' => ['Firewood and charcoal displacement', 'Affordable energy for local business', 'Nationwide coverage pathway'],
+                        ],
+                        [
+                            'id' => 'fleet',
+                            'title' => 'Fleet & Logistics Management',
+                            'summary' => 'We operate and manage a growing fleet of specialised gas trailers, with support for third-party fleet integration and optimisation.',
+                            'points' => ['Dispatch coordination', 'Route monitoring', 'Delivery tracking', 'Fleet optimisation'],
+                            'outcomes' => ['Higher asset utilisation', 'Measurable delivery performance', 'Lower cost per tonne delivered'],
+                        ],
+                        [
+                            'id' => 'advisory',
+                            'title' => 'Infrastructure & Logistics Advisory',
+                            'summary' => 'We support partners with the systems, planning discipline and operational frameworks required to expand gas access efficiently.',
+                            'points' => ['Gas logistics system design', 'Infrastructure deployment planning', 'Market penetration strategy', 'Operational coordination'],
+                            'outcomes' => ['Bankable deployment plans', 'Reduced execution risk', 'Faster time to first delivery'],
+                        ],
+                    ];
+                @endphp
 
-                <div class="mt-6 space-y-6 text-white/90">
-                    <div>
-                        <h4 class="text-lg font-semibold text-white">Virtual Pipeline Systems</h4>
-                        <p class="mt-2 leading-relaxed">
-                            We transport gas using specialized high-pressure and cryogenic trailers to areas without pipeline access.
+                <livewire:site.services-accordion :services="$services" :open="'storage'" />
+            </div>
+        </div>
+    </section>
+
+    {{-- ================================================================
+         Anchor sections for deep links (storage / logistics / penetration / fleet / advisory)
+         ================================================================ --}}
+    <section class="section surface-canvas" aria-labelledby="services-detail">
+        <span id="storage" class="sr-only"></span>
+        <div class="shell">
+            <div class="max-w-3xl">
+                <p class="eyebrow">How it fits together</p>
+                <h2 id="services-detail" class="display display-lg mt-6">One corridor, four connected layers.</h2>
+                <p class="lede mt-7">
+                    Gas access fails when any layer is missing. Our model deliberately holds all four so a
+                    commitment to a new market is a delivery commitment, not a hope.
+                </p>
+            </div>
+
+            <div class="mt-16 space-y-px overflow-hidden border border-[#e6e9ee] bg-[#e6e9ee]">
+                @foreach ([
+                    [
+                        'anchor' => 'storage',
+                        'label' => 'Layer 01 — Storage',
+                        'title' => 'Strategic capacity that absorbs volatility',
+                        'body' => 'Regional depots and local hubs hold reserves, smooth seasonal demand swings and give the transport fleet a reliable base to dispatch from.',
+                        'image' => 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1200&q=80',
+                        'alt' => 'Gas storage tanks at a regional depot',
+                    ],
+                    [
+                        'anchor' => 'logistics',
+                        'label' => 'Layer 02 — Logistics',
+                        'title' => 'A virtual pipeline on wheels',
+                        'body' => 'High-pressure and cryogenic trailers, planned dispatch and monitored routes carry gas to markets without a fixed pipeline connection.',
+                        'image' => 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=80',
+                        'alt' => 'Gas haulage trailers on the road',
+                    ],
+                    [
+                        'anchor' => 'penetration',
+                        'label' => 'Layer 03 — Penetration',
+                        'title' => 'Infrastructure that creates demand',
+                        'body' => 'Skid plants, LCNG stations and modular dispensing systems place gas supply physically inside the market, which is what converts availability into adoption.',
+                        'image' => 'https://images.unsplash.com/photo-1615729947596-a598e5de0ab3?auto=format&fit=crop&w=1200&q=80',
+                        'alt' => 'Modular gas dispensing installation',
+                    ],
+                    [
+                        'anchor' => 'fleet',
+                        'label' => 'Layer 04 — Fleet',
+                        'title' => 'Operations measured in real time',
+                        'body' => 'Dispatch coordination, route monitoring and delivery tracking give partners visibility over every movement and give us the data to keep improving.',
+                        'image' => 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1200&q=80',
+                        'alt' => 'Logistics dispatch control room',
+                    ],
+                ] as $index => $layer)
+                    <div id="{{ $layer['anchor'] }}-layer" class="scroll-mt-32 bg-white">
+                        <livewire:site.reveal :index="$index" :stagger="true" :key="'layer-'.$layer['anchor']">
+                            <article class="grid gap-0 lg:grid-cols-12">
+                                <div @class(['order-2 p-8 md:p-12 lg:order-1 lg:col-span-7', 'lg:order-2' => $index % 2 === 1])>
+                                    <p class="label text-[#F59E0B]">{{ $layer['label'] }}</p>
+                                    <h3 class="heading heading-md mt-4">{{ $layer['title'] }}</h3>
+                                    <p class="mt-4 max-w-xl text-[0.975rem] leading-8 text-[#475069]">{{ $layer['body'] }}</p>
+                                </div>
+                                <div @class(['thumb order-1 aspect-[16/10] lg:order-2 lg:col-span-5 lg:aspect-auto lg:min-h-[18rem]', 'lg:order-1' => $index % 2 === 1])>
+                                    <img src="{{ $layer['image'] }}" alt="{{ $layer['alt'] }}" loading="lazy">
+                                </div>
+                            </article>
+                        </livewire:site.reveal>
+                    </div>
+                @endforeach
+            </div>
+
+            <span id="advisory" class="sr-only"></span>
+        </div>
+    </section>
+
+    {{-- ================================================================
+         Industries served
+         ================================================================ --}}
+    <section class="section" aria-labelledby="services-industries">
+        <div class="shell">
+            <div class="max-w-3xl">
+                <p class="eyebrow">Industries we serve</p>
+                <h2 id="services-industries" class="display display-lg mt-6">Serving diverse energy and commercial needs.</h2>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 gap-px overflow-hidden border border-[#e6e9ee] bg-[#e6e9ee] sm:grid-cols-2 lg:grid-cols-5">
+                @foreach ([
+                    ['Energy companies', 'Upstream, midstream and downstream partners needing dependable offtake logistics.', 'M13 2 3 14h7l-1 8 10-12h-7l1-8Z'],
+                    ['Industrial manufacturers', 'Continuous-process plants replacing diesel and heavy fuel oil with gas.', 'M3 21V9l5 3V9l5 3V6l5 3v12H3Z'],
+                    ['Transport operators', 'Fleet owners converting to CNG for lower running costs and cleaner emissions.', 'M3 17V7h9v10H3Zm10-5h3l3 3v2h-6v-5ZM6 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z'],
+                    ['Government projects', 'State and federal programmes aimed at domestic gas utilisation.', 'M4 21V10h16v11M9 21V14h6v7M12 3l8 5H4l8-5Z'],
+                    ['Commercial & residential', 'Estates, hospitality and retail markets moving to cleaner cooking energy.', 'M12 3 3 9v12h6v-6h6v6h6V9l-9-6Z'],
+                ] as $index => $industry)
+                    <livewire:site.reveal :index="$index" :stagger="true" :key="'industry-'.$index" class="bg-white">
+                        <article class="flex h-full flex-col p-7">
+                            <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#1E3A8A]/8 text-[#1E3A8A]">
+                                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="{{ $industry[2] }}" />
+                                </svg>
+                            </span>
+                            <h3 class="heading mt-5 text-base leading-snug">{{ $industry[0] }}</h3>
+                            <p class="mt-2.5 text-sm leading-7 text-[#475069]">{{ $industry[1] }}</p>
+                        </article>
+                    </livewire:site.reveal>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- ================================================================
+         CTA
+         ================================================================ --}}
+    <section class="section surface-canvas" aria-labelledby="services-cta">
+        <div class="shell">
+            <div class="relative overflow-hidden bg-[#0f172a] px-6 py-16 md:px-16 md:py-20">
+                <div class="grid-lines absolute inset-0"></div>
+
+                <div class="relative grid gap-10 lg:grid-cols-12 lg:items-center">
+                    <div class="lg:col-span-8">
+                        <p class="eyebrow eyebrow-light">Let's build together</p>
+                        <h2 id="services-cta" class="display display-md mt-6 max-w-3xl text-white">
+                            Need reliable gas infrastructure or logistics support?
+                        </h2>
+                        <p class="lede mt-6 max-w-2xl text-white/70">
+                            Tell us the market, the volume and the timeline. We will come back with a deployment
+                            approach built around infrastructure, logistics and delivery systems designed for long-term impact.
                         </p>
                     </div>
 
-                    <div>
-                        <h4 class="text-lg font-semibold text-white">Intermodal Logistics</h4>
-                        <p class="mt-2 leading-relaxed">
-                            We integrate road and maritime systems to enable cross-border gas distribution.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h4 class="text-lg font-semibold text-white">Capabilities</h4>
-                        <ul class="mt-3 space-y-3">
-                            <li class="flex items-start gap-3">
-                                <span class="text-[#F59E0B]">•</span>
-                                <span>Bulk LPG haulage</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-[#F59E0B]">•</span>
-                                <span>CNG distribution networks</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="text-[#F59E0B]">•</span>
-                                <span>LNG cryogenic transport</span>
-                            </li>
-                        </ul>
+                    <div class="flex flex-col gap-3 lg:col-span-4 lg:items-end">
+                        <a href="{{ route('contact') }}" class="btn btn-gold btn-lg w-full lg:w-auto" wire:navigate>
+                            Start your project
+                            <svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                            </svg>
+                        </a>
+                        <a href="{{ route('assets') }}" class="btn btn-outline-light w-full lg:w-auto" wire:navigate>Review our assets</a>
                     </div>
                 </div>
             </div>
-
-            <!-- 3 -->
-            <div class="bg-white rounded-lg p-8 md:p-10 shadow-lg border border-gray-100">
-                <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">03</span>
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mt-4 tracking-tight">
-                    Gas Penetration Infrastructure
-                </h3>
-                <p class="mt-5 text-lg text-gray-600 leading-relaxed">
-                    We deploy infrastructure that enables real access to gas where it is needed, not just where pipelines exist.
-                </p>
-
-                <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 font-medium text-gray-900">LPG skid plants</div>
-                    <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 font-medium text-gray-900">LCNG stations</div>
-                    <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 font-medium text-gray-900">Mini distribution hubs</div>
-                    <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 font-medium text-gray-900">Modular dispensing systems</div>
-                </div>
-            </div>
-
-            <!-- 4 -->
-            <div class="bg-white rounded-lg p-8 md:p-10 shadow-lg border border-gray-100">
-                <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">04</span>
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mt-4 tracking-tight">
-                    774 LGA Distribution Model
-                </h3>
-                <p class="mt-5 text-lg text-gray-600 leading-relaxed">
-                    Our decentralized distribution system is designed to expand cleaner energy access across urban, rural, and underserved communities.
-                </p>
-
-                <ul class="mt-8 space-y-4 text-gray-600">
-                    <li class="flex items-start gap-3">
-                        <span class="text-[#F59E0B]">•</span>
-                        <span>Replace firewood and charcoal with LPG</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-[#F59E0B]">•</span>
-                        <span>Support local businesses with affordable energy</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-[#F59E0B]">•</span>
-                        <span>Establish CNG refueling points</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-[#F59E0B]">•</span>
-                        <span>Enable off-grid LNG power solutions</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- 5 -->
-            <div class="bg-gradient-to-br from-[#0F172A] to-[#1E3A8A] rounded-lg p-8 md:p-10 shadow-lg text-white">
-                <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">05</span>
-                <h3 class="text-2xl md:text-3xl font-bold mt-4 tracking-tight">
-                    Fleet & Logistics Management
-                </h3>
-                <p class="mt-5 text-lg text-white/85 leading-relaxed">
-                    We operate and manage a growing fleet of specialized gas trailers, with support for third-party integration.
-                </p>
-
-                <div class="mt-8">
-                    <h4 class="text-lg font-semibold text-white">Services Include</h4>
-                    <ul class="mt-4 space-y-3 text-white/85">
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#F59E0B]">•</span>
-                            <span>Dispatch coordination</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#F59E0B]">•</span>
-                            <span>Route monitoring</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#F59E0B]">•</span>
-                            <span>Delivery tracking</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="text-[#F59E0B]">•</span>
-                            <span>Fleet optimization</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- 6 -->
-            <div class="bg-white rounded-lg p-8 md:p-10 shadow-lg border border-gray-100">
-                <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">06</span>
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mt-4 tracking-tight">
-                    Infrastructure & Logistics Advisory
-                </h3>
-                <p class="mt-5 text-lg text-gray-600 leading-relaxed">
-                    We support partners with the systems, planning, and operational frameworks needed to expand gas access efficiently.
-                </p>
-
-                <ul class="mt-8 space-y-4 text-gray-600">
-                    <li class="flex items-start gap-3">
-                        <span class="text-[#F59E0B]">•</span>
-                        <span>Gas logistics system design</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-[#F59E0B]">•</span>
-                        <span>Infrastructure deployment planning</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-[#F59E0B]">•</span>
-                        <span>Market penetration strategies</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <span class="text-[#F59E0B]">•</span>
-                        <span>Operational coordination</span>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- INDUSTRIES -->
-    <section class="pb-20 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-        <div class="rounded-lg bg-white border border-gray-100 shadow-lg p-8 md:p-12">
-            <div class="max-w-3xl">
-                <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">
-                    Industries We Serve
-                </span>
-                <h3 class="text-3xl md:text-5xl font-bold text-gray-900 mt-4 tracking-tight">
-                    Serving Diverse Energy and Commercial Needs
-                </h3>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 mt-10">
-                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900 flex flex-col items-center gap-3">
-                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A]" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor">
-                            <path d="M8.5 1.5a.5.5 0 0 0-1 0v1.793l-.146-.147a.5.5 0 1 0-.708.708L8 5.207l1.354-1.353a.5.5 0 0 0-.708-.708l-.146.147V1.5z"/>
-                            <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h3A2.5 2.5 0 0 1 12 6.5v5A2.5 2.5 0 0 1 9.5 14h-3A2.5 2.5 0 0 1 4 11.5v-5zm2.5-1.5A1.5 1.5 0 0 0 5 6.5v5A1.5 1.5 0 0 0 6.5 13h3a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 9.5 5h-3z"/>
-                        </svg>
-                    </span>
-                    <span>Energy companies</span>
-                </div>
-                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900 flex flex-col items-center gap-3">
-                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A]" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor">
-                            <path d="M1 14.5V3.75A.75.75 0 0 1 1.75 3h2.5a.75.75 0 0 1 .75.75V14.5H1zm5.5 0V1.75A.75.75 0 0 1 7.25 1h2.5a.75.75 0 0 1 .75.75V14.5H6.5zm5.5 0V6.75A.75.75 0 0 1 12.75 6h2.5a.75.75 0 0 1 .75.75V14.5H12z"/>
-                        </svg>
-                    </span>
-                    <span>Industrial manufacturers</span>
-                </div>
-                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900 flex flex-col items-center gap-3">
-                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A]" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor">
-                            <path d="M0 11a1 1 0 0 0 1 1h1.5a1.5 1.5 0 1 0 3 0h5a1.5 1.5 0 1 0 3 0H15a1 1 0 0 0 1-1V8.5a1 1 0 0 0-.293-.707l-1.5-1.5A1 1 0 0 0 13.5 6H11V4a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v7zm1-7h9v6h-.05a1.5 1.5 0 0 0-2.9 0h-2.1a1.5 1.5 0 0 0-2.9 0H1V4zm10 3h2.5l1.5 1.5V10h-.55a1.5 1.5 0 0 0-2.9 0H11V7z"/>
-                        </svg>
-                    </span>
-                    <span>Transport operators</span>
-                </div>
-                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900 flex flex-col items-center gap-3">
-                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A]" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor">
-                            <path d="M8 1a1 1 0 0 1 .894.553l.382.764 1.706.247a1 1 0 0 1 .554 1.706l-1.235 1.204.292 1.7a1 1 0 0 1-1.451 1.054L8 7.514l-1.528.804a1 1 0 0 1-1.451-1.054l.292-1.7-1.235-1.204a1 1 0 0 1 .554-1.706l1.706-.247.382-.764A1 1 0 0 1 8 1z"/>
-                            <path d="M2 9.5a.5.5 0 0 1 .5-.5H6v1H3v3h10v-3h-3v-1h3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-4z"/>
-                        </svg>
-                    </span>
-                    <span>Government projects</span>
-                </div>
-                <div class="rounded-lg bg-[#F9FAFB] border border-gray-100 p-5 text-center font-semibold text-gray-900 flex flex-col items-center gap-3">
-                    <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#1E3A8A]/10 text-[#1E3A8A]" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 16 16" fill="currentColor">
-                            <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 2 8h1v6a.5.5 0 0 0 .5.5H6v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4h2.5a.5.5 0 0 0 .5-.5V8h1a.5.5 0 0 0 .354-.854l-6-6z"/>
-                        </svg>
-                    </span>
-                    <span>Commercial and residential markets</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="pb-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-        <div class="rounded-lg bg-gradient-to-br from-[#1E3A8A] via-[#0F2B5E] to-[#0D9488] p-10 md:p-14 shadow-2xl text-center">
-            <span class="text-sm font-semibold text-[#F59E0B] uppercase tracking-[0.2em]">
-                Let’s Build Together
-            </span>
-
-            <h3 class="text-3xl md:text-5xl font-bold text-white mt-4 tracking-tight leading-tight max-w-3xl mx-auto">
-                Need reliable gas infrastructure or logistics support?
-            </h3>
-
-            <p class="mt-6 text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl mx-auto">
-                Let’s build your energy solution together with infrastructure, logistics, and delivery systems designed for long-term impact.
-            </p>
-
-            <a href="{{ route('contact') }}" class="inline-flex items-center gap-3 mt-8 bg-[#F59E0B] hover:bg-amber-500 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transition-all duration-300 hover:scale-[1.02]">
-                Let’s Build Your Energy Solution
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                </svg>
-            </a>
         </div>
     </section>
 

@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\WaitlistController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -11,10 +11,12 @@ Route::get('gascorp-app', [PagesController::class, 'showAppLanding'])->name('app
 Route::get('about', [PagesController::class, 'showAbout'])->name('about');
 Route::get('services', [PagesController::class, 'showServices'])->name('services');
 Route::get('our-assets', [PagesController::class, 'showAssets'])->name('assets');
-Route::get('team', [PagesController::class, 'showteam'])->name('team');
-
-// Contact
 Route::get('contact', [PagesController::class, 'showContact'])->name('contact');
+
+// Contact and waitlist submissions are handled by the Livewire components
+// (site.contact-form, site.callback-request and site.waitlist-form). These
+// routes remain as a no-JavaScript fallback so the forms still work if
+// Livewire's assets fail to load.
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 Route::post('/waitlist', [WaitlistController::class, 'store'])->name('waitlist.store');
 
@@ -24,6 +26,7 @@ Route::get('/sitemap.xml', function () {
         ['loc' => route('home'), 'changefreq' => 'weekly', 'priority' => '1.0'],
         ['loc' => route('about'), 'changefreq' => 'monthly', 'priority' => '0.8'],
         ['loc' => route('services'), 'changefreq' => 'monthly', 'priority' => '0.9'],
+        ['loc' => route('assets'), 'changefreq' => 'monthly', 'priority' => '0.8'],
         ['loc' => route('contact'), 'changefreq' => 'monthly', 'priority' => '0.7'],
         ['loc' => route('app.landing'), 'changefreq' => 'weekly', 'priority' => '0.8'],
     ];
@@ -52,14 +55,23 @@ Route::get('/llms.txt', function (Request $request) {
     $baseUrl = rtrim($request->getSchemeAndHttpHost(), '/');
     $content = implode("\n", [
         '# GASCORP Nigeria',
-        '> Gas Corridor and Penetration Ltd develops integrated LPG, CNG, and LNG infrastructure and logistics across Nigeria and West Africa.',
+        '> Gas Corridor and Penetration Ltd develops integrated LPG, CNG and LNG infrastructure and logistics across Nigeria and West Africa.',
         '',
         '## Primary Pages',
         "- Home: {$baseUrl}/",
         "- About: {$baseUrl}/about",
         "- Services: {$baseUrl}/services",
+        "- Our Assets: {$baseUrl}/our-assets",
         "- Contact: {$baseUrl}/contact",
         "- GASCORP App (Pre-launch): {$baseUrl}/gascorp-app",
+        '',
+        '## Service Lines',
+        '- Gas storage solutions',
+        '- Gas logistics and transportation (virtual pipeline)',
+        '- Gas penetration infrastructure',
+        '- 774 LGA distribution model',
+        '- Fleet and logistics management',
+        '- Infrastructure and logistics advisory',
         '',
         '## Contact',
         '- Email: info@gascorpnigeria.com',

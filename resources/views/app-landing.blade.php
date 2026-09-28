@@ -1,289 +1,410 @@
-@php
-  $launchAt = now()->addMonthsNoOverflow(9)->startOfDay();
-@endphp
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GASCORP App | Pre-launch</title>
-  <meta name="description" content="GASCORP App is an upcoming logistics platform for booking gas transport, dispatch coordination, driver operations, and investor visibility.">
-  <meta name="keywords" content="GASCORP App, gas logistics app, dispatch platform, LPG transport booking, CNG LNG operations">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#082f49">
-  <link rel="canonical" href="{{ route('app.landing') }}">
-  <link rel="alternate" type="text/plain" href="{{ url('/llms.txt') }}" title="LLMs.txt">
-  <link rel="alternate" type="text/plain" href="{{ url('/ai.txt') }}" title="AI Policy">
+@extends('layouts.theme')
+@section('title', 'GASCORP App')
+@section('meta_title', 'GASCORP App | Digital Gas Logistics Platform')
+@section('meta_description', 'The GASCORP App puts gas logistics booking, dispatch coordination, driver operations and asset performance on one platform. Pre-launch — join the waitlist for early access.')
+@section('meta_keywords', 'GASCORP App, gas logistics app, dispatch platform, LPG transport booking, CNG LNG operations, fleet management software Nigeria')
+@section('canonical', route('app.landing'))
+@section('og_image', asset('bg.jpg'))
+@section('theme_color', '#0F2B5E')
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="GASCORP Nigeria">
-  <meta property="og:title" content="GASCORP App | Pre-launch">
-  <meta property="og:description" content="gas logistics with live corridor intelligence, dispatch orchestration, and asset performance visibility.">
-  <meta property="og:url" content="{{ route('app.landing') }}">
-  <meta property="og:image" content="https://i.postimg.cc/bJn1w7xB/gascorp.png">
-  <meta property="og:locale" content="en_NG">
+@push('structured_data')
+    <script type="application/ld+json">
+        {{-- Schema.org keys are written without their "@" prefix and restored after
+             encoding: Blade would otherwise compile "@context" as a directive. --}}
+        {!! strtr(json_encode([
+            'context' => 'https://schema.org',
+            'type' => 'SoftwareApplication',
+            'name' => 'GASCORP App',
+            'applicationCategory' => 'BusinessApplication',
+            'operatingSystem' => 'Android, iOS, Web',
+            'description' => 'Digital platform for gas logistics booking, dispatch operations, driver trip updates and investor fleet visibility.',
+            'url' => route('app.landing'),
+            'featureList' => [
+                'Gas transport booking with route and capacity selection',
+                'Dispatch assignment and live trip visibility',
+                'Driver trip updates and proof of delivery',
+                'Asset utilisation and owner wallet reporting',
+            ],
+            'offers' => [
+                'type' => 'Offer',
+                'price' => '0',
+                'priceCurrency' => 'NGN',
+                'availability' => 'https://schema.org/PreOrder',
+            ],
+            'publisher' => [
+                'type' => 'Organization',
+                'name' => 'Gas Corridor and Penetration Ltd',
+                'url' => url('/'),
+            ],
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE), ['"context"' => '"'.chr(64).'context"', '"type"' => '"'.chr(64).'type"']) !!}
+    </script>
+@endpush
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="GASCORP App | Pre-launch">
-  <meta name="twitter:description" content="Join the waitlist for the GASCORP App launch and get early access to digital gas logistics operations.">
-  <meta name="twitter:image" content="https://i.postimg.cc/bJn1w7xB/gascorp.png">
+@section('content')
+<main role="main">
 
-  <script type="application/ld+json">
-    {!! json_encode([
-      '@context' => 'https://schema.org',
-      '@type' => 'SoftwareApplication',
-      'name' => 'GASCORP App',
-      'applicationCategory' => 'BusinessApplication',
-      'operatingSystem' => 'Web',
-      'description' => 'Digital platform for gas logistics booking, dispatch operations, driver lifecycle updates, and investor fleet visibility.',
-      'url' => route('app.landing'),
-      'offers' => [
-        '@type' => 'Offer',
-        'price' => '0',
-        'priceCurrency' => 'NGN',
-        'availability' => 'https://schema.org/PreOrder',
-      ],
-      'publisher' => [
-        '@type' => 'Organization',
-        'name' => 'Gas Corridor and Penetration Ltd',
-        'url' => url('/'),
-      ],
-    ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
-  </script>
-  @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body>
-<main>
-<div class="app-landing" data-launch-at="{{ $launchAt->toIso8601String() }}">
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="{{ route('app.landing') }}" class="nav-brand">
-        <img src="{{ asset('2.png') }}" class="nav-logo-img" alt="GASCORP Nigeria">
-      </a>
-      <div class="nav-actions">
-        <a href="{{ route('home') }}" class="btn-ghost">Corporate Site</a>
-        <a href="#launch" class="btn-cta">Join Waitlist</a>
-      </div>
-      <button class="hamburger" id="ham" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="mobile-menu" id="mob-menu">
-      <a href="{{ route('home') }}">Corporate Site</a>
-      <a href="#launch" class="btn-cta">Join Waitlist</a>
-    </div>
-  </nav>
+    {{-- ================================================================
+         Hero — statement, status, countdown, first mockup
+         ================================================================ --}}
+    <section class="section surface-canvas" aria-labelledby="app-hero">
+        <div class="shell grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-16">
+            <div class="lg:col-span-7">
+                <p class="label inline-flex items-center gap-2.5 border border-[#F59E0B]/50 bg-[#F59E0B]/8 px-3.5 py-2 text-[#b26f05]">
+                    <span class="inline-block h-1.5 w-1.5 rounded-full bg-[#F59E0B]"></span>
+                    Pre-launch
+                </p>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-grid grid-bg"></div>
-    <div class="hero-content">
-      <h1>Uber-like booking for gas logistics, built on <span>live corridor intelligence</span>.</h1>
-      <p>Request a truck, assign a driver, monitor movement, track asset ROI, and control operations from one synchronized platform.</p>
+                <h1 id="app-hero" class="display display-lg mt-7">
+                    Booking for gas logistics,
+                    <span class="block text-[#1E3A8A]">built on live corridor intelligence.</span>
+                </h1>
 
-      <div class="launch-countdown" aria-label="Launch countdown">
-        <div class="countdown-block">
-          <span class="countdown-value" data-countdown="days">000</span>
-          <span class="countdown-label">Days</span>
-        </div>
-        <div class="countdown-block">
-          <span class="countdown-value" data-countdown="hours">00</span>
-          <span class="countdown-label">Hours</span>
-        </div>
-        <div class="countdown-block">
-          <span class="countdown-value" data-countdown="minutes">00</span>
-          <span class="countdown-label">Minutes</span>
-        </div>
-        <div class="countdown-block">
-          <span class="countdown-value" data-countdown="seconds">00</span>
-          <span class="countdown-label">Seconds</span>
-        </div>
-      </div>
-      <p class="countdown-note">Estimated launch window: {{ $launchAt->format('F Y') }}</p>
-    </div>
-  </section>
+                <p class="lede mt-7 max-w-2xl">
+                    Request a truck, assign a driver, follow the movement and track asset performance from one
+                    platform. The GASCORP App brings the corridor's operations into a single, auditable system —
+                    for customers, drivers, fleet owners and our own control room.
+                </p>
 
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="section">
-      <div class="two-col">
-        <div>
-          <p class="section-eyebrow">Product Experience</p>
-          <h2>Clean booking flow in front. Deep operational control behind it.</h2>
-          <p>Customers get fast booking and live trip visibility. Operators get data-rich dispatch intelligence and performance monitoring that scales across Nigeria and West Africa.</p>
-        </div>
-        <img src="https://img.freepik.com/free-photo/male-engineer-analyzed-industry-40-system-smart-manufacturing-plant_482257-126802.jpg?semt=ais_hybrid&w=740&q=80" alt="Logistics truck at night">
-      </div>
-    </div>
-  </section>
+                <div class="mt-9 flex flex-wrap gap-3">
+                    <a href="#launch" class="btn btn-gold btn-lg">
+                        Join the waitlist
+                        <svg class="h-4 w-4" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                        </svg>
+                    </a>
+                    <a href="#screens" class="btn btn-outline btn-lg">See the interface</a>
+                </div>
 
-  <!-- ROLES -->
-  <section id="roles" class="dark-band">
-    <div style="max-width:1120px;margin:0 auto;padding:0 20px">
-      <p class="section-eyebrow">Role-Based Interface</p>
-      <h2 style="font-size:clamp(26px,4vw,44px);font-family:var(--font-heading);color:#ecfeff;max-width:680px;margin-bottom:0;">Every user opens a different experience, all tied to one live system.</h2>
-      <div class="role-grid">
-        <div class="role-card">
-          <div class="role-head">
-            <span class="role-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372A3.375 3.375 0 0 0 21 16.125V15a2.25 2.25 0 0 0-2.25-2.25h-1.372M15 19.128v-.003a3 3 0 0 0-2.4-2.94A5.989 5.989 0 0 0 12 16a5.989 5.989 0 0 0-.6.03A3 3 0 0 0 9 19.125v.003m6 0A3.375 3.375 0 0 1 11.625 22.5h-.75A3.375 3.375 0 0 1 7.5 19.125v-.003m7.5 0c0-.621-.504-1.125-1.125-1.125h-3.75C9.504 18 9 18.504 9 19.125m6-8.625a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 2.25a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg>
-            </span>
-            <h3>Customers</h3>
-          </div>
-          <p>Pick service type, route, and truck capacity. Confirm price, track movement, and keep full invoice history.</p>
-        </div>
-        <div class="role-card">
-          <div class="role-head">
-            <span class="role-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m3 16 4-2.286M7 13.714 11 16m-4-2.286v4.572m0-4.572L3 16m4 2.286L3 16m8 0 4-2.286m-4 2.286v4.572m0-4.572-4 2.286m4-2.286 4 2.286m0 0 4-2.286m-4 2.286v-4.572m0 4.572L15 16m4-2.286L15 16m4-2.286V9.143m0 4.571-4-2.285m4 2.285L23 16m-8-4.571V6.857M15 11.43 11 9.143m4 2.286V16m-4-6.857-4 2.286m4-2.286V6.857m0 2.286L7 11.429m0 0V6.857m0 4.572L3 9.143m8-2.286 4-2.286m-4 2.286L7 4.571m4 2.286V2.286"/></svg>
-            </span>
-            <h3>Drivers</h3>
-          </div>
-          <p>Receive assignments, follow route instructions, update trip status, and upload delivery confirmation.</p>
-        </div>
-        <div class="role-card">
-          <div class="role-head">
-            <span class="role-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M6 15l3-3 2 2 4-4 3 3"/></svg>
-            </span>
-            <h3>Investors</h3>
-          </div>
-          <p>View active vs idle trucks, revenue by asset, route activity, utilization rate, and owner wallet performance.</p>
-        </div>
-        <div class="role-card">
-          <div class="role-head">
-            <span class="role-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12a7.5 7.5 0 0 1 15 0m-15 0a7.5 7.5 0 0 0 15 0m-15 0H3m1.5 0H6m12 0h1.5m-1.5 0H18M9 12h6m-6 0a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75V4.5m0 15v-2.25"/></svg>
-            </span>
-            <h3>Admins</h3>
-          </div>
-          <p>Manage users, fleet readiness, bookings, payout logic, disputes, compliance expiry, and analytics reporting.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OPERATIONS -->
-  <section id="operations">
-    <div class="section">
-      <div class="two-col">
-        <div>
-          <p class="section-eyebrow">How It Runs</p>
-          <h2>Three-step journey from booking to verified delivery.</h2>
-          <div class="steps">
-            <div class="step">
-              <span class="step-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 7.5h16M4 12h16m-16 4.5h9m-9-13h16a1.5 1.5 0 0 1 1.5 1.5v13A1.5 1.5 0 0 1 20 19.5H4A1.5 1.5 0 0 1 2.5 18V5A1.5 1.5 0 0 1 4 3.5Z"/>
-                </svg>
-              </span>
-              <div class="step-content">
-                <span class="step-num">Step 01</span>
-                <p>User sets route, truck type, and schedule.</p>
-              </div>
+                <dl class="mt-12 grid grid-cols-2 gap-x-8 gap-y-8 border-t border-[#e6e9ee] pt-8 sm:grid-cols-4">
+                    @foreach ([
+                        ['figure' => '4', 'label' => 'Role-based interfaces'],
+                        ['figure' => '24/7', 'label' => 'Trip visibility'],
+                        ['figure' => '3', 'label' => 'Fuel streams covered'],
+                        ['figure' => '0', 'label' => 'Paper dispatch'],
+                    ] as $fact)
+                        <div>
+                            <dt class="sr-only">{{ $fact['label'] }}</dt>
+                            <dd>
+                                <span class="stat-figure text-3xl md:text-4xl">{{ $fact['figure'] }}</span>
+                                <span class="stat-label block text-[#475069]">{{ $fact['label'] }}</span>
+                            </dd>
+                        </div>
+                    @endforeach
+                </dl>
             </div>
-            <div class="step">
-              <span class="step-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m3 12 7-7m0 0h8v8m-8-8 4 4m-4 10h8a2 2 0 0 0 2-2V9m-10 10a2 2 0 0 1-2-2v-3"/>
-                </svg>
-              </span>
-              <div class="step-content">
-                <span class="step-num">Step 02</span>
-                <p>Dispatch engine assigns nearest available driver.</p>
-              </div>
+
+            <div class="lg:col-span-5">
+                <div class="flex flex-col items-center">
+                    <x-phone size="lg" label="Booking — customer app">
+                        <x-phone-screen variant="customer" />
+                    </x-phone>
+
+                    <div class="mt-10 w-full max-w-sm border border-[#e6e9ee] bg-white p-5">
+                        <div class="flex items-center gap-4">
+                            <span class="app-icon" aria-hidden="true">GC</span>
+                            <div>
+                                <p class="font-[Manrope] text-sm font-bold text-[#0f172a]">GASCORP App</p>
+                                <p class="mt-0.5 font-[DM_Mono,monospace] text-[0.625rem] uppercase tracking-[0.16em] text-[#475069]">
+                                    Android &middot; iOS &middot; Web
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5">
+                            <livewire:site.launch-countdown />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="step">
-              <span class="step-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4m6-2a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/>
-                </svg>
-              </span>
-              <div class="step-content">
-                <span class="step-num">Step 03</span>
-                <p>Delivery tracked, confirmed, and closed with proof and payouts.</p>
-              </div>
-            </div>
-          </div>
         </div>
-        <img src="https://img.freepik.com/free-photo/industrial-plant-engineer-industry-40-manufacturing-facility_482257-126096.jpg?semt=ais_hybrid&w=740&q=80" alt="Dispatch operations planning">
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- STATS -->
-  <div class="dark-band">
-    <div style="max-width:1120px;margin:0 auto;padding:0 20px">
-      <p class="section-eyebrow">Reliability Targets</p>
-      <h2 style="font-size:clamp(24px,3.5vw,40px);font-family:var(--font-heading);color:#ecfeff;max-width:620px;margin-bottom:0;">Built as mission-critical digital infrastructure for corridor logistics.</h2>
-      <div class="stats-grid">
-        <div class="stat-card"><div class="num" data-count-target="99.9" data-count-decimals="1" data-count-suffix="%">0%</div><div class="lbl">Availability Goal</div></div>
-        <div class="stat-card"><div class="num" data-count-target="2" data-count-prefix="<" data-count-suffix="s">0</div><div class="lbl">Response Time Target</div></div>
-        <div class="stat-card"><div class="num" data-count-target="24" data-count-suffix="/7">0</div><div class="lbl">Trip Visibility</div></div>
-        <div class="stat-card"><div class="num" data-count-target="6" data-count-pad="2">00</div><div class="lbl">Core User Roles</div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CTA -->
-  <div id="launch" class="cta-wrap">
-    <div class="cta-box">
-      <div class="cta-inner">
-        <p class="section-eyebrow">Launch Program</p>
-        <h2>Join the first wave of customers, fleet teams, and investors on the GASCORP App.</h2>
-        <p>Request early access to shape onboarding priorities, corridor coverage, and operational rollout.</p>
-
-        @if (session('waitlist_success'))
-          <p class="waitlist-status waitlist-status-success">{{ session('waitlist_success') }}</p>
-        @endif
-
-        @if ($errors->any())
-          <p class="waitlist-status waitlist-status-error">
-            {{ $errors->first('waitlist') ?: 'Please review your waitlist details and try again.' }}
-          </p>
-        @endif
-
-        <form action="{{ route('waitlist.store') }}" method="POST" class="waitlist-form" novalidate>
-          @csrf
-          <div class="waitlist-grid">
-            <div>
-              <label for="waitlist-name">Full Name</label>
-              <input id="waitlist-name" name="name" type="text" value="{{ old('name') }}" required maxlength="120" placeholder="Your full name">
+    {{-- ================================================================
+         Screen mockups
+         ================================================================ --}}
+    <section class="section" id="screens" aria-labelledby="app-screens">
+        <div class="shell">
+            <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
+                <div class="lg:col-span-7">
+                    <p class="eyebrow">Interface preview</p>
+                    <h2 id="app-screens" class="display display-lg mt-6">One platform, four surfaces.</h2>
+                </div>
+                <div class="lg:col-span-5">
+                    <p class="text-[1.0625rem] leading-8 text-[#475069]">
+                        Every role opens a different experience, all bound to the same live operational record.
+                        These are illustrative layouts of the workflows the app will ship with.
+                    </p>
+                </div>
             </div>
-            <div>
-              <label for="waitlist-email">Work Email</label>
-              <input id="waitlist-email" name="email" type="email" value="{{ old('email') }}" required maxlength="150" placeholder="you@company.com">
+
+            <ol class="mt-16 grid grid-cols-1 justify-items-center gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+                @foreach ([
+                    ['variant' => 'customer', 'index' => '01', 'label' => 'Customer', 'caption' => 'Book a movement, confirm price and follow the trip.'],
+                    ['variant' => 'driver', 'index' => '02', 'label' => 'Driver', 'caption' => 'Receive assignments, update status, upload delivery proof.'],
+                    ['variant' => 'investor', 'index' => '03', 'label' => 'Investor', 'caption' => 'Utilisation, revenue by asset and owner wallet performance.'],
+                    ['variant' => 'admin', 'index' => '04', 'label' => 'Admin', 'caption' => 'Fleet readiness, dispatch queue, payouts and compliance.'],
+                ] as $screen)
+                    <li class="flex w-full flex-col items-center">
+                        <x-phone :label="$screen['index'].' — '.$screen['label']">
+                            <x-phone-screen :variant="$screen['variant']" />
+                        </x-phone>
+                        <p class="mt-4 max-w-[15rem] text-center text-sm leading-6 text-[#475069]">
+                            {{ $screen['caption'] }}
+                        </p>
+                    </li>
+                @endforeach
+            </ol>
+        </div>
+    </section>
+
+    {{-- ================================================================
+         Why it exists
+         ================================================================ --}}
+    <section class="section surface-canvas" aria-labelledby="app-problem">
+        <div class="shell grid gap-14 lg:grid-cols-12 lg:gap-16">
+            <div class="lg:col-span-5">
+                <p class="eyebrow">Why it exists</p>
+                <h2 id="app-problem" class="display display-lg mt-6">
+                    Gas logistics still runs on phone calls and paper.
+                </h2>
+
+                <p class="lede mt-7">
+                    Booking is negotiated by call. Dispatch lives in a group chat. Proof of delivery is a
+                    photograph on someone's handset. By the time a fleet owner asks how an asset performed last
+                    month, the answer is an estimate.
+                </p>
+
+                <p class="mt-5 text-[1.0625rem] leading-8 text-[#475069]">
+                    The GASCORP App replaces that with one recorded workflow: every request, assignment, movement
+                    and delivery written to the same ledger, visible to whoever is entitled to see it.
+                </p>
             </div>
-          </div>
 
-          <div class="waitlist-role">
-            <label for="waitlist-role">I am joining as</label>
-            <select id="waitlist-role" name="role" required>
-              <option value="">Select role</option>
-              <option value="customer" @selected(old('role') === 'customer')>Customer</option>
-              <option value="driver" @selected(old('role') === 'driver')>Driver</option>
-              <option value="investor" @selected(old('role') === 'investor')>Investor</option>
-              <option value="admin" @selected(old('role') === 'admin')>Admin Team</option>
-            </select>
-          </div>
+            <div class="lg:col-span-7">
+                <div class="grid gap-px overflow-hidden border border-[#e6e9ee] bg-[#e6e9ee] sm:grid-cols-2">
+                    @foreach ([
+                        ['Before', 'Booking by phone call', 'No record of what was agreed, at what price, for which date.'],
+                        ['After', 'Structured booking request', 'Route, capacity, cargo and price captured once and reused.'],
+                        ['Before', 'Dispatch by group chat', 'Assignments are verbal, unverifiable and impossible to audit.'],
+                        ['After', 'Dispatch with assignment trail', 'Every job carries an owner, a driver and a status history.'],
+                        ['Before', 'Proof by photograph', 'Delivery evidence sits on a personal device.'],
+                        ['After', 'Proof attached to the trip', 'Confirmation is stored against the job and the asset.'],
+                        ['Before', 'Performance by estimate', 'Utilisation and revenue are reconstructed after the fact.'],
+                        ['After', 'Performance from live data', 'Utilisation, revenue and readiness read from operations.'],
+                    ] as $index => $item)
+                        @php $isAfter = $index % 2 === 1; @endphp
+                        <div @class(['bg-white p-6', 'sm:border-l-2 sm:border-l-[#0D9488]' => $isAfter])>
+                            <p @class([
+                                'label',
+                                'text-[#b26f05]' => ! $isAfter,
+                                'text-[#0a6f66]' => $isAfter,
+                            ])>{{ $item[0] }}</p>
+                            <h3 class="heading mt-3 text-base">{{ $item[1] }}</h3>
+                            <p class="mt-2 text-sm leading-7 text-[#475069]">{{ $item[2] }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
 
-          <button type="submit" class="btn-primary waitlist-submit">Join Waitlist</button>
-        </form>
-      </div>
-    </div>
-  </div>
+    {{-- ================================================================
+         Roles
+         ================================================================ --}}
+    <section class="section" aria-labelledby="app-roles">
+        <div class="shell">
+            <div class="max-w-3xl">
+                <p class="eyebrow">Role-based access</p>
+                <h2 id="app-roles" class="display display-lg mt-6">Everyone sees exactly what they should.</h2>
+                <p class="lede mt-7">
+                    The same job looks different depending on who opens it. Each role gets the fields, actions and
+                    reporting that belong to their part of the corridor — nothing more.
+                </p>
+            </div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="{{ asset('2.png') }}" class="footer-logo" alt="GASCORP Nigeria">
-      </div>
-      <span>Gas Corridor and Penetration Ltd | &copy2026 All Rights Reserved</span>
-    </div>
-  </footer>
-</div>
+            <div class="mt-16 divide-y divide-[#e6e9ee] border-y border-[#e6e9ee]">
+                @foreach ([
+                    [
+                        'index' => '01',
+                        'role' => 'Customers',
+                        'body' => 'Set the route, choose truck type and capacity, confirm the price, then follow the movement through to delivery with the full invoice history attached.',
+                        'points' => ['Booking with route and capacity', 'Price confirmation before dispatch', 'Live trip visibility', 'Invoice and delivery history'],
+                    ],
+                    [
+                        'index' => '02',
+                        'role' => 'Drivers',
+                        'body' => 'Receive an assignment with route instructions, progress the trip status at each stage and close the job with verified proof of delivery.',
+                        'points' => ['Assignment inbox', 'Route and site instructions', 'Stage-by-stage status updates', 'Proof-of-delivery capture'],
+                    ],
+                    [
+                        'index' => '03',
+                        'role' => 'Fleet owners & investors',
+                        'body' => 'See how each asset is actually performing: active versus idle time, revenue by asset, route activity, utilisation rate and owner wallet balance.',
+                        'points' => ['Utilisation by asset', 'Revenue and route activity', 'Readiness and downtime', 'Owner wallet performance'],
+                    ],
+                    [
+                        'index' => '04',
+                        'role' => 'Operations & admin',
+                        'body' => 'Run the corridor: users, fleet readiness, the dispatch queue, booking exceptions, payout logic, disputes and compliance expiry, with analytics on top.',
+                        'points' => ['Dispatch queue control', 'Fleet readiness and compliance', 'Payout and dispute handling', 'Operational analytics'],
+                    ],
+                ] as $role)
+                    <div class="grid gap-6 py-10 md:grid-cols-12 md:gap-10">
+                        <div class="md:col-span-1">
+                            <span class="row-num-index">{{ $role['index'] }}</span>
+                        </div>
+                        <div class="md:col-span-4">
+                            <h3 class="heading heading-sm">{{ $role['role'] }}</h3>
+                        </div>
+                        <div class="md:col-span-4">
+                            <p class="text-[0.9375rem] leading-7 text-[#475069]">{{ $role['body'] }}</p>
+                        </div>
+                        <ul class="space-y-2.5 md:col-span-3">
+                            @foreach ($role['points'] as $point)
+                                <li class="flex items-start gap-2.5 text-sm text-[#0f172a]">
+                                    <span class="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#0D9488]"></span>
+                                    {{ $point }}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- ================================================================
+         How it runs
+         ================================================================ --}}
+    <section class="section surface-ink relative overflow-hidden" aria-labelledby="app-flow">
+        <div class="grid-lines absolute inset-0"></div>
+
+        <div class="shell relative">
+            <div class="grid gap-10 lg:grid-cols-12 lg:items-end">
+                <div class="lg:col-span-7">
+                    <p class="eyebrow eyebrow-light">How it runs</p>
+                    <h2 id="app-flow" class="display display-lg mt-6 text-white">
+                        From booking to verified delivery in three steps.
+                    </h2>
+                </div>
+                <div class="lg:col-span-5">
+                    <p class="text-[1.0625rem] leading-8 text-white/65">
+                        One request creates one job. That job carries its own state until the delivery is closed
+                        and the payout is settled.
+                    </p>
+                </div>
+            </div>
+
+            <ol class="mt-16 grid gap-px overflow-hidden border border-white/12 bg-white/12 md:grid-cols-3">
+                @foreach ([
+                    ['01', 'Book', 'The customer sets route, truck type, cargo and schedule. The app returns a price and a confirmed slot.'],
+                    ['02', 'Dispatch', 'The dispatch engine assigns the nearest suitable asset and driver, and pushes the assignment to the driver app.'],
+                    ['03', 'Deliver & settle', 'Movement is tracked, delivery is confirmed with proof, the job closes and payouts are reconciled.'],
+                ] as $step)
+                    <li class="bg-[#0f172a] p-8">
+                        <span class="row-num-index">{{ $step[0] }}</span>
+                        <h3 class="heading heading-sm mt-4 text-white">{{ $step[1] }}</h3>
+                        <p class="mt-3 text-[0.9375rem] leading-7 text-white/60">{{ $step[2] }}</p>
+                    </li>
+                @endforeach
+            </ol>
+        </div>
+    </section>
+
+    {{-- ================================================================
+         Platform characteristics
+         ================================================================ --}}
+    <section class="section surface-canvas" aria-labelledby="app-platform">
+        <div class="shell">
+            <div class="max-w-3xl">
+                <p class="eyebrow">Platform characteristics</p>
+                <h2 id="app-platform" class="display display-lg mt-6">Built as operations infrastructure, not an app.</h2>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 gap-px overflow-hidden border border-[#e6e9ee] bg-[#e6e9ee] sm:grid-cols-2 lg:grid-cols-3">
+                @foreach ([
+                    ['Availability target', '99.9%', 'Dispatch decisions are time-critical; the platform is engineered to stay reachable.'],
+                    ['Response target', '< 2s', 'Booking and status actions are designed to feel immediate on mobile networks.'],
+                    ['Trip visibility', '24/7', 'Every movement is observable end to end, including out-of-hours transfers.'],
+                    ['Corridor coverage', '774 LGAs', 'The rollout roadmap follows the national penetration programme.'],
+                    ['Audit trail', 'Every action', 'Bookings, assignments and confirmations are recorded and attributable.'],
+                    ['Access model', 'Role-based', 'Data is scoped to the role, so partners only see what concerns them.'],
+                ] as $item)
+                    <article class="bg-white p-7">
+                        <p class="label text-[#475069]">{{ $item[0] }}</p>
+                        <p class="stat-figure mt-4 text-2xl md:text-3xl">{{ $item[1] }}</p>
+                        <p class="mt-3 text-sm leading-7 text-[#475069]">{{ $item[2] }}</p>
+                    </article>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- ================================================================
+         Waitlist
+         ================================================================ --}}
+    <section class="section" id="launch" aria-labelledby="app-launch">
+        <div class="shell grid gap-14 lg:grid-cols-12 lg:gap-16">
+            <div class="lg:col-span-5">
+                <p class="eyebrow">Launch programme</p>
+                <h2 id="app-launch" class="display display-lg mt-6">
+                    Join the first wave.
+                </h2>
+
+                <p class="lede mt-7">
+                    Early access shapes onboarding priorities, corridor coverage and the sequence of the rollout.
+                    Tell us which side of the corridor you are on and we will bring you in as capacity opens.
+                </p>
+
+                <ul class="mt-9 space-y-4">
+                    @foreach ([
+                        'Early access ahead of public release',
+                        'Input into corridor and route priorities',
+                        'Onboarding support for your first bookings',
+                        'No cost to join and no obligation',
+                    ] as $benefit)
+                        <li class="flex items-start gap-3.5">
+                            <span class="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0D9488] text-white">
+                                <svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7" />
+                                </svg>
+                            </span>
+                            <span class="text-[0.9375rem] leading-7 text-[#475069]">{{ $benefit }}</span>
+                        </li>
+                    @endforeach
+                </ul>
+
+                <div class="mt-10 max-w-sm">
+                    <livewire:site.launch-countdown />
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <div class="border border-[#e6e9ee] bg-[#F9FAFB] p-7 md:p-10">
+                    <div class="flex items-start gap-4">
+                        <span class="app-icon" aria-hidden="true">GC</span>
+                        <div>
+                            <h3 class="heading heading-sm">Request early access</h3>
+                            <p class="mt-2 text-sm leading-7 text-[#475069]">
+                                Four fields. We will confirm your place and let you know as onboarding opens.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <livewire:site.waitlist-form :source="'app-page'" />
+                    </div>
+
+                    <p class="mt-6 border-t border-[#e6e9ee] pt-5 text-xs leading-6 text-[#475069]">
+                        Prefer to speak to the team first? Call
+                        <a href="tel:+2347038392520" class="font-semibold text-[#1E3A8A] underline decoration-[#F59E0B] underline-offset-2">+234 703 839 2520</a>
+                        or
+                        <a href="{{ route('contact') }}" class="font-semibold text-[#1E3A8A] underline decoration-[#F59E0B] underline-offset-2" wire:navigate>send an enquiry</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </main>
-</body>
-</html>
+@endsection
